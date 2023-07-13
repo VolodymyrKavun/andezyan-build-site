@@ -1,0 +1,44 @@
+.container {
+    padding: 40px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item {
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.item:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.imgContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    width: 328px;
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.img {
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.title {
+    position: absolute;
+    color: #FFF;
+    font-family: KoHo;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.32px;
+}
