@@ -1,9 +1,12 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { KoHo } from 'next/font/google';
 import Footer from '@/components/forLayout/Footer/Footer';
 import Header from '@/components/forLayout/Header/Header';
 
-const inter = Inter({ subsets: ['latin'] });
+const koHo = KoHo({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+});
 
 export const metadata = {
   title: 'Будівельна компанія Андезян',
@@ -13,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="uk">
-      <body className={inter.className}>
+      <body className={koHo.className}>
         <Header />
         {children}
         <Footer />
