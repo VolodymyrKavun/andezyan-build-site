@@ -1,7 +1,7 @@
 import React from 'react';
 
-const GalleryCategory = () => {
-  return <div>GalleryCategory</div>;
+const GallerySlider = () => {
+  return <div>GallerySlider</div>;
 };
 
-export default GalleryCategory;
+export default GallerySlider;

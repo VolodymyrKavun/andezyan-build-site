@@ -6,7 +6,7 @@
         |--(pages)  - сюди будуть імпортуватися screens з відповідними назвами (розробники сюди НЕ ЛІЗУТЬ)
             |--aboutUs  -  Route to page
                 |--page.jsx
-            |--designing  -  Route to page
+            |--design  -  Route to page
                 |--page.jsx
             |--gallery  -  Route to page
                 |--[category]  -  Route to page
@@ -27,7 +27,7 @@
         |--screens   - компоненти, які будуть завантажуватись на відповідну Page
             |--Home
             |--About us
-            |--Designing
+            |--Design
             |--Gallery  -  групи картинок по виду діяльності
             |--GallerySlider  -  картинки одного виду діяльності
             |--Video
