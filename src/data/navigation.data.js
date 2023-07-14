@@ -4,11 +4,12 @@ export const navigationData = [
   {
     id: uuidv4(),
     title: 'Головна',
+    title: 'Головна',
     path: '/',
   },
   {
     id: uuidv4(),
-    title: 'About Us',
+    title: 'About us',
     path: '/aboutUs',
   },
   {
