@@ -2,70 +2,38 @@
 import Image from 'next/image';
 import React from 'react';
 import styles from './Design.module.css';
+import { designData } from '@/data/design.data';
+import Link from 'next/link';
 
 const Design = () => {
   return (
     <>
       <section className={styles.container}>
         <ul className={styles.list}>
-          <li className={styles.itemWrapper}>
-            <div className={styles.item}>
-              <div className={styles.imgWrapper}>
-                <Image
-                  src="/sprite/icon_document-scanner-outline.svg"
-                  alt="Icon"
-                  fill={true}
-                  className={styles.icon}
-                />
+          {designData.map(item => (
+            <li className={styles.itemWrapper} key={item.id}>
+              <div className={styles.item}>
+                <div className={styles.imgWrapper}>
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill={true}
+                    className={styles.icon}
+                  />
+                </div>
+                <h2 className={styles.title}>{item.title}</h2>
+                <p className={styles.text}>{item.text}</p>
+                <button className={styles.button}>
+                  <Link
+                    href={`/design/${item.category}`}
+                    className={styles.link}
+                  >
+                    {item.textButton}
+                  </Link>
+                </button>
               </div>
-              <h2 className={styles.title}>Сертифікати</h2>
-              <p className={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Facere, molestias sequi consectetur accusantium libero quos.
-                Omnis expedita culpa voluptates accusantium.
-              </p>
-              <button className={styles.button}>Детальніше</button>
-            </div>
-          </li>
-          <li className={styles.itemWrapper}>
-            <div className={styles.item}>
-              <div className={styles.imgWrapper}>
-                <Image
-                  src="/sprite/icon_line.svg"
-                  alt="Icon"
-                  fill={true}
-                  className={styles.icon}
-                />
-              </div>
-
-              <h2 className={styles.title}>Розробка документації</h2>
-              <p className={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Facere, molestias sequi consectetur accusantium libero quos.
-                Omnis expedita culpa voluptates accusantium.
-              </p>
-              <button className={styles.button}>Детальніше</button>
-            </div>
-          </li>
-          <li className={styles.itemWrapper}>
-            <div className={styles.item}>
-              <div className={styles.imgWrapper}>
-                <Image
-                  src="/sprite/search.svg"
-                  alt="Icon"
-                  fill={true}
-                  className={styles.icon}
-                />
-              </div>
-              <h2 className={styles.title}>Виготовлення та візуалізація</h2>
-              <p className={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Facere, molestias sequi consectetur accusantium libero quos.
-                Omnis expedita culpa voluptates accusantium.
-              </p>
-              <button className={styles.button}>Детальніше</button>
-            </div>
-          </li>
+            </li>
+          ))}
         </ul>
       </section>
     </>
