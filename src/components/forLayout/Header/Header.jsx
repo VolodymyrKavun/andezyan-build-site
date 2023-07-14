@@ -1,16 +1,18 @@
 'use client';
+import { useState } from 'react';
 import Link from 'next/link';
-import React from 'react';
-import { navigationData } from '@/data/navigation.data';
-
 import Image from 'next/image';
+import { navigationData } from '@/data/navigation.data';
 import styles from './Header.module.css';
 
 const Header = () => {
+  const [nav, setNav] = useState(true);
+
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <Link href="/" className={styles.logo}>
         <Image
+          className={styles.imgLogo}
           src="/Andezyan_logo_mini.svg"
           alt="Logo mini"
           width={88}
@@ -18,14 +20,22 @@ const Header = () => {
         />
       </Link>
 
-      <div className={styles.links}>
+      <ul className={nav ? styles.menuNav : styles.menuBurger}>
         {navigationData.map(el => (
-          <Link key={el.id} href={el.path} className={styles.link}>
-            {el.title}
-          </Link>
+          <li key={el.id}>
+            <Link href={el.path} className={styles.link}>
+              {el.title}
+            </Link>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+      <button className={styles.btnOrder}>Замовити дзвінок</button>
+      <button
+        // onClick={() => setNav(!nav)}
+        className={styles.mobileBtnNav}
+        aria-label="BurgerMenu"
+      ></button>
+    </header>
   );
 };
 
