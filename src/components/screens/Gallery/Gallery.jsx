@@ -12,8 +12,10 @@ const Gallery = () => {
           <Image
             src={item.img}
             alt={item.title}
-            width={328}
-            height={320}
+            // width={328}
+            // height={320}
+            width={380}
+            height={380}
             className={styles.img}
           />
           <h1 className={styles.title}>{item.title}</h1>
