@@ -1,12 +1,13 @@
+"use client";
 import React from 'react';
-import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import styles from './GallerySlider.module.css';
 import { imageGallerySliderData } from '@/data/imageGallerySlider.data';
 
 
-const getData = (cat) => {
-  const data = imageGallerySliderData[cat];
+const getDataByParam = (parameter, obj) => {
+  const data = obj[parameter];
 
   if (data) {
     return data;
@@ -17,9 +18,12 @@ const getData = (cat) => {
 
 
 const GallerySlider = ({ params }) => {
-  const data = getData(params.category);
+  const router = useRouter();
+
+  const data = getDataByParam(params.category, imageGallerySliderData);
 
   return <div className={styles.container}>
+    <button className={styles.buttonToBack} onClick={() => router.back()}>Повернутися</button>
     {data.map(item => (
       <div key={item.id} className={styles.imgContainer}>
         <Image className={styles.img} src={item.url} alt={item.title} width={380}
