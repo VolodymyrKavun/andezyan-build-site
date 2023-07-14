@@ -1,0 +1,126 @@
+.container {
+  padding: 40px 34px 40px 34px;
+  height: 100%;
+  width: 100%;
+  background: url('/designing/bg_image_design_min.jpg');
+
+  @media screen and (min-width: 768px) {
+    padding: 80px 34px 80px 34px;
+  }
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.itemWrapper {
+  width: 293px;
+  height: 427px;
+
+  @media screen and (min-width: 768px) {
+    width: 369px;
+    height: 642px;
+  }
+}
+
+.item {
+  display: flex;
+  padding: 44px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background: var(--main-color);
+
+  @media screen and (min-width: 768px) {
+    padding: 70px 60px;
+  }
+}
+
+.imgWrapper {
+  width: 40px;
+  height: 40px;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    width: 102px;
+    height: 102px;
+  }
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  filter: invert(27%) sepia(10%) saturate(11%) hue-rotate(335deg)
+    brightness(100%) contrast(94%);
+}
+
+.title {
+  color: #474747;
+  text-align: center;
+  font-family: KoHo;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.77px;
+  text-transform: uppercase;
+  height: 36px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    letter-spacing: 1.1px;
+    height: 56px;
+  }
+}
+
+.text {
+  color: #474747;
+  font-family: KoHo;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.77px;
+  width: 245px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.88px;
+  }
+}
+
+.button {
+  width: 202px;
+  height: 54px;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 40px; */
+  background-color: #febb12;
+  border: none;
+  color: var(--main-color);
+  font-family: KoHo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.88px;
+
+  @media screen and (min-width: 768px) {
+    width: 226px;
+    height: 54px;
+    padding: 1px 51px;
+  }
+}
