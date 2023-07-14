@@ -38,10 +38,10 @@ export const imageGroupsData = [
     title: 'Магазини',
     url: '/gallery/shops',
   },
-  {
-    id: uuidv4(),
-    img: certificate_lobas,
-    title: 'Проєктування',
-    url: '/gallery/certificate',
-  },
+  // {
+  //   id: uuidv4(),
+  //   img: certificate_lobas,
+  //   title: 'Проєктування',
+  //   url: '/gallery/certificate',
+  // },
 ];
