@@ -13,8 +13,8 @@ export const navigationData = [
   },
   {
     id: uuidv4(),
-    title: 'Планування',
-    path: '/designing',
+    title: 'design',
+    path: '/design',
   },
   {
     id: uuidv4(),

@@ -4,7 +4,7 @@ export const videosData = [
   {
     id: uuidv4(),
     src: 'https://www.youtube.com/embed/qOlYAoErrOY',
-    title: 'Реклама будівельна компанія ОА Андезян',
+    title: 'Реклама будівельної компанії ОА Андезян',
   },
   {
     id: uuidv4(),
@@ -19,12 +19,12 @@ export const videosData = [
   {
     id: uuidv4(),
     src: 'https://www.youtube.com/embed/Q9fT_nzlWxk',
-    title: 'Ангар Вишневе BMW',
+    title: 'Ангар. Вишневе. BMW',
   },
   {
     id: uuidv4(),
     src: 'https://www.youtube.com/embed/bFZoDc3N958',
-    title: 'Роздвижні ворота',
+    title: 'Розсувні ворота',
   },
   {
     id: uuidv4(),
