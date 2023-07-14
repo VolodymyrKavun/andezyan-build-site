@@ -1,10 +1,10 @@
 import GallerySlider from '@/components/screens/GallerySlider/GallerySlider';
 import React from 'react';
 
-const GalleryCategoryPage = () => {
+const GalleryCategoryPage = ({ params }) => {
   return (
     <>
-      <GallerySlider />
+      <GallerySlider params={params} />
     </>
   );
 };

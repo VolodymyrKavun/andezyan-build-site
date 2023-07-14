@@ -4,6 +4,7 @@ export const navigationData = [
   {
     id: uuidv4(),
     title: 'Головна',
+    title: 'Головна',
     path: '/',
   },
   {

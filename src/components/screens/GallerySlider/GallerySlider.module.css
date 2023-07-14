@@ -1,0 +1,42 @@
+.container {
+    padding: 64px 16px;
+
+    @media screen and (min-width: 1440px) {
+        background: linear-gradient(rgba(22, 22, 22, 0.50), rgba(22, 22, 22, 0.50)), url("/gallery-bg.webp");
+        background-size: cover;
+        background-position: 50% 56%;
+    }
+}
+
+.buttonToBack {
+    @media screen and (min-width: 1440px) {
+        width: 226px;
+        height: 54px;
+        padding: 16px 24px;
+        margin-bottom: 92px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(254, 187, 18, 1);
+        color: #fff;
+        border: none;
+        color: var(--main-color);
+        font-family: KoHo;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.88px;
+    }
+}
+
+.imgContainer {
+    width: 328px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.img {
+    object-fit: cover;
+}
