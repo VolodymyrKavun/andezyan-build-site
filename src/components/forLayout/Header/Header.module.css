@@ -16,8 +16,8 @@
 
 .imgLogo {
   @media (max-width: 968px) {
-    width: 40px;
-    height: 44px;
+    width: 60px;
+    height: 70px;
   }
 }
 
@@ -79,7 +79,7 @@
     border: none;
     width: 48px;
     height: 48px;
-    /* background-color: transparent;
-    color: var(--main_bg_color_our_team); */
+    background-color: transparent;
+    /* color: var(--main_bg_color_our_team); */
   }
 }

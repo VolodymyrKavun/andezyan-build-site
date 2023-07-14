@@ -34,7 +34,16 @@ const Header = () => {
         // onClick={() => setNav(!nav)}
         className={styles.mobileBtnNav}
         aria-label="BurgerMenu"
-      ></button>
+      >
+        <Image
+          src="/sprite/icon_burger.svg"
+          width={32}
+          height={19}
+          alt="Icon"
+          // fill={true}
+          className={styles.icon}
+        />
+      </button>
     </header>
   );
 };
