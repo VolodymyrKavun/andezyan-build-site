@@ -3,32 +3,32 @@ import { v4 as uuidv4 } from 'uuid';
 export const navigationData = [
   {
     id: uuidv4(),
-    title: 'home',
+    title: 'Головна',
     path: '/',
   },
   {
     id: uuidv4(),
-    title: 'aboutUs',
+    title: 'About Us',
     path: '/aboutUs',
   },
   {
     id: uuidv4(),
-    title: 'design',
+    title: 'Планування',
     path: '/design',
   },
   {
     id: uuidv4(),
-    title: 'gallery',
+    title: 'Галерея',
     path: '/gallery',
   },
   {
     id: uuidv4(),
-    title: 'video',
+    title: 'Відео',
     path: '/video',
   },
   {
     id: uuidv4(),
-    title: 'contacts',
+    title: 'Контакти',
     path: '/contacts',
   },
 ];

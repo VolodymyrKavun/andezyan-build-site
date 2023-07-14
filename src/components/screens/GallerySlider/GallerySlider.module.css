@@ -1,0 +1,14 @@
+.container {
+    padding: 64px 16px;
+
+}
+
+.imgContainer {
+    width: 328px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.img {
+    object-fit: cover;
+}

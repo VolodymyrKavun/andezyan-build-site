@@ -5,7 +5,7 @@ import house_front_finnish_04 from '/public/houses/house_front_finnish_04.jpg';
 import beton_vishneve_01 from '/public/beton/beton_vishneve_01.jpg';
 import shop_maf_grey from '/public/shops/shop_maf_grey.jpg';
 import asphalt_kopilov_front from '/public/asphalt/asphalt_kopilov_front.jpg';
-import certificate_lobas from '/public/certificates/certificate_lobas.jpg';
+// import certificate_lobas from '/public/certificates/certificate_lobas.jpg';
 
 export const imageGroupsData = [
   {
