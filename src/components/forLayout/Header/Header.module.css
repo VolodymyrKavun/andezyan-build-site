@@ -13,6 +13,10 @@
 .logo {
   font-weight: bold;
   font-size: 22px;
+  margin-left: 24px;
+  @media (max-width: 968px) {
+    margin-left: 16px;
+  }
 }
 
 .imgLogo {
@@ -80,14 +84,16 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
+
   @media (max-width: 968px) {
     font-size: 24px;
     font-weight: 300;
   }
 }
 
-.link:focus {
-  border-bottom: solid 0.4mm #fff;
+.linkActive {
+  /* border-bottom: solid 0.4mm #fff; */
+  color: rgba(254, 187, 18, 1);
 }
 
 .btnOrder {
@@ -95,10 +101,11 @@
   height: 54px;
   background-color: rgba(254, 187, 18, 1);
   color: #fff;
-  /* border-radius: 16px; */
+  border-radius: 16px;
   border: none;
   font-size: 16px;
   font-weight: 500;
+  margin-right: 48px;
 
   @media (max-width: 968px) {
     display: none;
@@ -115,6 +122,6 @@
     width: 48px;
     height: 48px;
     background-color: transparent;
-    /* color: var(--main_bg_color_our_team); */
+    margin-right: 16px;
   }
 }
