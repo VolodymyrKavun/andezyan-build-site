@@ -4,13 +4,13 @@ export const designCategory = [
   // sertificate
   {
     id: uuidv4(),
-    src: '/certificates/certificate_lobas.jpg',
+    src: '/certificates/certificate_lobas.webp',
     alt: 'Certificate lobas',
     category: 'sertificate',
   },
   {
     id: uuidv4(),
-    src: '/certificates/qualification_lobas.jpg',
+    src: '/certificates/qualification_lobas.webp',
     alt: 'Qualification lobas',
     category: 'sertificate',
   },

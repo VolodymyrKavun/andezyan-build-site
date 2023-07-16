@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import belaya_sto_oksana_min from '/public/angars/belaya_sto_oksana_min.jpg';
-import house_front_finnish_04 from '/public/houses/house_front_finnish_04.jpg';
-import beton_vishneve_01 from '/public/beton/beton_vishneve_01.jpg';
-import shop_maf_grey from '/public/shops/shop_maf_grey.jpg';
-import asphalt_kopilov_front from '/public/asphalt/asphalt_kopilov_front.jpg';
-// import certificate_lobas from '/public/certificates/certificate_lobas.jpg';
+import belaya_sto_oksana_min from '/public/angars/belaya_sto_oksana_min.webp';
+import house_front_finnish_04 from '/public/houses/house_front_finnish_04.webp';
+import beton_vishneve_01 from '/public/beton/beton_vishneve_01.webp';
+import shop_maf_grey from '/public/shops/shop_maf_grey.webp';
+import asphalt_kopilov_front from '/public/asphalt/asphalt_kopilov_front.webp';
+// import certificate_lobas from '/public/certificates/certificate_lobas.webp';
 
 export const imageGroupsData = [
   {
