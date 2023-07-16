@@ -10,12 +10,11 @@
         justify-content: center;
         flex-wrap: wrap;
         row-gap: 40px;
-        column-gap: 20px;
+        column-gap: 40px;
         background: linear-gradient(rgba(22, 22, 22, 0.50), rgba(22, 22, 22, 0.50)), url("/gallery-bg.webp");
         background-size: cover;
         background-position: 50% 56%;
     }
-
 }
 
 .item {
@@ -29,16 +28,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* border-radius: 24px; */
     width: 328px;
     height: 320px;
     overflow: hidden;
     position: relative;
+    border: 1px solid var(--btn-bg-color);
 
     @media screen and (min-width: 1440px) {
         width: 380px;
         height: 380px;
-        border: 2px solid #eee;
     }
 }
 
@@ -58,10 +56,8 @@
     line-height: normal;
     letter-spacing: 1.32px;
 
-
     @media screen and (min-width: 1440px) {
         font-size: 36px;
         letter-spacing: 1.98px;
     }
-
 }
