@@ -2,10 +2,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { navigationData } from '@/data/navigation.data';
 import styles from './Header.module.css';
 
 const Header = () => {
+  const pathname = usePathname();
   const [nav, setNav] = useState(true);
 
   return (
@@ -30,7 +32,11 @@ const Header = () => {
             <Link
               href={el.path}
               onClick={() => setNav(true)}
-              className={styles.link}
+              className={
+                pathname === el.path
+                  ? `${styles.link} ${styles.linkActive}`
+                  : styles.link
+              }
             >
               {el.title}
             </Link>
