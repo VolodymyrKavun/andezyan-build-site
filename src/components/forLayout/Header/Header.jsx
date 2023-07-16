@@ -2,10 +2,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { navigationData } from '@/data/navigation.data';
 import styles from './Header.module.css';
 
 const Header = () => {
+  const pathname = usePathname();
   const [nav, setNav] = useState(true);
 
   return (
@@ -20,10 +22,22 @@ const Header = () => {
         />
       </Link>
 
-      <ul className={nav ? styles.menuNav : styles.menuBurger}>
+      <ul
+        className={
+          nav ? styles.menuNav : styles.menuBurger + ' ' + styles.activeBurger
+        }
+      >
         {navigationData.map(el => (
           <li key={el.id}>
-            <Link href={el.path} className={styles.link}>
+            <Link
+              href={el.path}
+              onClick={() => setNav(true)}
+              className={
+                pathname === el.path
+                  ? `${styles.link} ${styles.linkActive}`
+                  : styles.link
+              }
+            >
               {el.title}
             </Link>
           </li>
@@ -31,18 +45,27 @@ const Header = () => {
       </ul>
       <button className={styles.btnOrder}>Замовити дзвінок</button>
       <button
-        // onClick={() => setNav(!nav)}
+        onClick={() => setNav(!nav)}
         className={styles.mobileBtnNav}
         aria-label="BurgerMenu"
       >
-        <Image
-          src="/sprite/icon_burger.svg"
-          width={32}
-          height={19}
-          alt="Icon"
-          // fill={true}
-          className={styles.icon}
-        />
+        {nav ? (
+          <Image
+            src="/sprite/icon_burger.svg"
+            width={32}
+            height={19}
+            alt="Icon"
+            className={styles.icon}
+          />
+        ) : (
+          <Image
+            src="/sprite/icon_close_white.svg"
+            width={35}
+            height={35}
+            alt="Icon"
+            className={styles.icon}
+          />
+        )}
       </button>
     </header>
   );
