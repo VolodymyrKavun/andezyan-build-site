@@ -23,14 +23,9 @@ const Design = () => {
                 </div>
                 <h2 className={styles.title}>{item.title}</h2>
                 <p className={styles.text}>{item.text}</p>
-                <button className={styles.button}>
-                  <Link
-                    href={`/design/${item.category}`}
-                    className={styles.link}
-                  >
-                    {item.textButton}
-                  </Link>
-                </button>
+                <Link href={`/design/${item.category}`} className={styles.link}>
+                  <button className={styles.button}>{item.textButton}</button>
+                </Link>
               </div>
             </li>
           ))}

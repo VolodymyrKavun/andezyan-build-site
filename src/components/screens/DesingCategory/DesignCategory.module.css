@@ -13,18 +13,20 @@
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 24px;
 }
 
 .imgWrapper {
-  width: 200px;
-  height: 200px;
+  width: 328px;
+  height: 320px;
   position: relative;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 4px double var(--btn-bg-color);
+  cursor: pointer;
 
   @media screen and (min-width: 1440px) {
     width: 380px;
@@ -36,21 +38,33 @@
   object-fit: cover;
 }
 
+.img:hover {
+  transform: scale(1.1);
+  border: 2px solid var(--btn-bg-color);
+}
+
 .buttonToBack {
-  width: 202px;
-  height: 54px;
-  padding: 16px 24px;
+  padding: 0px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #febb12;
+  background-color: transparent;
   border: none;
-  color: var(--main-color);
-  font-family: KoHo;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: 0.88px;
+}
+
+.buttonToBack:hover {
+  transform: translateX(-0.3cem);
+}
+
+.iconBackWrapper {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.iconBack {
+  border-radius: 50%;
+  background-color: #febb12;
+  transform: rotate(90deg);
 }
