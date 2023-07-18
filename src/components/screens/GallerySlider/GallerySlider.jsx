@@ -27,7 +27,7 @@ const GallerySlider = ({ params }) => {
   });
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <button className={styles.buttonToBack} onClick={() => router.back()}>
         Повернутися
       </button>
@@ -52,7 +52,7 @@ const GallerySlider = ({ params }) => {
         })}
       </div>
       <Slider index={index} setIndex={setIndex} array={dataForSlider} />
-    </div>
+    </section>
   );
 };
 

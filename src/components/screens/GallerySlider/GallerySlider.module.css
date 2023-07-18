@@ -19,26 +19,25 @@
 }
 
 .buttonToBack {
-  display: none;
+  margin-right: auto;
+  width: 178px;
+  height: 50px;
+  background-color: var(--btn-bg-color);
+  color: var(--main-color);
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
 
   @media screen and (min-width: 1440px) {
     width: 226px;
     height: 54px;
     padding: 16px 24px;
-    margin-right: auto;
-    /* margin-bottom: 92px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--btn-bg-color);
-    color: #fff;
-    border: none;
-    color: var(--main-color);
     font-family: KoHo;
-    font-size: 16px;
     font-style: normal;
-    font-weight: 500;
     line-height: normal;
     letter-spacing: 0.88px;
   }
@@ -65,6 +64,7 @@
   overflow: hidden;
   position: relative;
   border: 1px solid var(--btn-bg-color);
+  box-shadow: var(--cards-box-shadow) 5px 10px 15px;
   cursor: pointer;
 
   @media screen and (min-width: 1440px) {

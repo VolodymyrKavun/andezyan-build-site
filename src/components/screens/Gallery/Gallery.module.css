@@ -18,9 +18,7 @@
 }
 
 .item {
-    text-decoration: none;
     display: inline-block;
-    cursor: pointer;
 }
 
 .imgContainer {
@@ -33,6 +31,7 @@
     overflow: hidden;
     position: relative;
     border: 1px solid var(--btn-bg-color);
+    box-shadow: var(--cards-box-shadow) 5px 10px 15px;
 
     @media screen and (min-width: 1440px) {
         width: 380px;
@@ -48,10 +47,7 @@
 .title {
     position: absolute;
     text-align: center;
-    color: #FFF;
-    font-family: KoHo;
     font-size: 24px;
-    font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 1.32px;
