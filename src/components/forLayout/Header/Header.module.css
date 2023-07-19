@@ -14,6 +14,7 @@
   font-weight: bold;
   font-size: 22px;
   margin-left: 24px;
+
   @media (max-width: 968px) {
     margin-left: 16px;
   }

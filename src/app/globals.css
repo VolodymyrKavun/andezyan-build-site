@@ -1,6 +1,8 @@
 :root {
   --main-bg-color: #161616;
   --main-color: #fff;
+  --btn-bg-color: #febb12;
+  --cards-box-shadow: rgba(254, 187, 18, 0.35);
 }
 
 html {
@@ -21,6 +23,7 @@ body {
   outline: none;
   margin: 0;
   padding: 0;
+  transition-duration: 1s;
 }
 
 ul,
