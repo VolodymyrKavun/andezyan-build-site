@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { navigationData } from '@/data/navigation.data';
+
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -24,7 +25,7 @@ const Header = () => {
 
       <ul
         className={
-          nav ? styles.menuNav : styles.menuBurger + ' ' + styles.activeBurger
+          nav ? styles.menuNav : `${styles.menuBurger} ${styles.activeBurger}`
         }
       >
         {navigationData.map(el => (

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import SLButton from '../../screens/SLButton/SLButton';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
@@ -8,7 +9,7 @@ const HomePage = () => {
         <div className={styles.wrapLogo}>
           <Image
             className={styles.imgLogo}
-            src="/Andezyan_logo_big.svg"
+            src="/Logo_Andezyan_dark.svg"
             alt="Logo big"
             width={172}
             height={189}
@@ -18,6 +19,7 @@ const HomePage = () => {
           Ми будуємо найкраще для <span className={styles.selection}>Вас</span>
         </h1>
         <button className={styles.btnOrder}>Залишити заявку</button>
+        <SLButton />
       </div>
     </>
   );
