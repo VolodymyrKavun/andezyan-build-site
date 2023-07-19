@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { imageGroupsData } from '@/data/imageGroups.data';
 
 const Gallery = () => {
-  return <div className={styles.container}>
+  return <section className={styles.container}>
     {imageGroupsData.map(item => (
       <Link key={item.id} href={item.url} className={styles.item}>
         <div className={styles.imgContainer}>
@@ -21,7 +21,7 @@ const Gallery = () => {
         </div>
       </Link>
     ))}
-  </div>;
+  </section>;
 };
 
 export default Gallery;
