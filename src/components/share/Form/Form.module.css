@@ -1,0 +1,175 @@
+.container {
+  width: 100%;
+  height: 640px;
+  padding: 0px 26px 0px 26px;
+  background: #161616;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    width: 634px;
+    height: 457px;
+
+    background: var(--main-color);
+  }
+}
+
+.ellipseBlack {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    width: 515px;
+    height: 515px;
+    border-radius: 50%;
+    background: #222;
+    position: absolute;
+    top: -176px;
+    left: -224px;
+  }
+}
+
+.wrapperBuble {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 21px;
+  left: -38px;
+
+  @media screen and (min-width: 768px) {
+    top: 31px;
+    left: 19px;
+  }
+}
+
+.yellowBuble {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapperYoungMan {
+  width: 112px;
+  height: 133px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+
+  @media screen and (min-width: 768px) {
+    width: 230px;
+    height: 275px;
+  }
+}
+
+.iconYoungMan {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 16px;
+  top: 53px;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  z-index: 1;
+
+  @media screen and (min-width: 768px) {
+    top: 14px;
+    right: 18px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.closeIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.ellipsePink {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    width: 122px;
+    height: 122px;
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    background: #dd7f7f;
+    border-radius: 50%;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 24px;
+
+  @media screen and (min-width: 768px) {
+    align-items: flex-start;
+    position: absolute;
+    right: 24px;
+  }
+}
+
+.textInput {
+  color: #e1e1e1;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.99px;
+  margin-bottom: 12px;
+
+  @media screen and (min-width: 768px) {
+    color: #474747;
+    font-weight: 700;
+  }
+}
+
+.input {
+  display: flex;
+  width: 308px;
+  padding: 16px 80px 16px 16px;
+  border: 1px solid var(--main-color);
+  background: var(--main-color);
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.input::-webkit-input-placeholder {
+  color: #9a9a9a;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.77px;
+}
+
+.submitBtn {
+  display: flex;
+  padding: 16px 24px;
+  align-items: center;
+  background: var(--btn-bg-color);
+  border: none;
+
+  color: var(--main-color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.88px;
+
+  margin-top: 60px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 34px;
+  }
+}

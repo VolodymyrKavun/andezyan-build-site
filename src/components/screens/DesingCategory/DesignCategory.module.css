@@ -26,7 +26,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--btn-bg-color);
   cursor: pointer;
 
   @media screen and (min-width: 1440px) {
@@ -59,8 +58,8 @@
 }
 
 .iconBackWrapper {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   position: relative;
 }
 
