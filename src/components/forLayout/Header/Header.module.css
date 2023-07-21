@@ -31,6 +31,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  margin-left: 90px;
 
   @media (max-width: 968px) {
     display: flex;
@@ -47,6 +48,12 @@
     background-color: black;
     transition: left 1000ms;
     gap: 16px;
+  }
+}
+
+.menuNav {
+  @media screen and (min-width: 1200px) {
+    margin-left: 155px;
   }
 }
 
