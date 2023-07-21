@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       <div className={styles.container}>
         <p className={styles.text}>
-          Copyright &copy; 2023{' '}
+          Copyright &copy; 2023
           <span className={styles.textNeon}>Webevery</span>. Всі права захищено.
         </p>
       </div>

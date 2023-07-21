@@ -18,7 +18,7 @@
 .textNeon {
   color: var(--main-color);
   animation: neon 4s infinite;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 @keyframes neon {

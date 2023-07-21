@@ -5,7 +5,7 @@
   background: url('/design/bg_image_design_min.jpg');
   background-position: center;
   background-size: cover;
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 105px);
 }
 
 .list {
