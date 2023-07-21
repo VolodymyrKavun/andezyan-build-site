@@ -23,6 +23,7 @@
 .itemWrapper {
   width: 293px;
   height: 427px;
+  position: relative;
 
   @media screen and (min-width: 768px) {
     width: 369px;
@@ -124,7 +125,7 @@
 .button:focus {
   background-color: #474747;
   color: var(--btn-bg-color);
-  border: 2px solid var(--btn-bg-color);
+  border: 1px solid var(--btn-bg-color);
 }
 
 .link {
