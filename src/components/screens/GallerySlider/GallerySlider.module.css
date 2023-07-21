@@ -65,13 +65,11 @@
   height: 320px;
   overflow: hidden;
   position: relative;
-  border: 1px solid var(--btn-bg-color);
   cursor: pointer;
 
   @media screen and (min-width: 1440px) {
     width: 380px;
     height: 380px;
-    box-shadow: var(--cards-box-shadow) 5px 10px 15px;
   }
 }
 

@@ -137,7 +137,7 @@ const Map = () => {
             zoom={13}
             center={placeCoords}
             mapContainerClassName="map"
-            mapContainerStyle={{ width: "100%", height: "800px", margin: "auto" }}
+            mapContainerStyle={{ width: "100%", height: "830px", margin: "auto" }}
         >
             <Marker
                 position={placeCoords}
