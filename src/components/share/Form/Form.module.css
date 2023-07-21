@@ -86,6 +86,10 @@
   }
 }
 
+.closeBtn:hover {
+  scale: 1.2;
+}
+
 .closeIcon {
   width: 100%;
   height: 100%;
@@ -153,6 +157,11 @@
   letter-spacing: 0.77px;
 }
 
+.inputError {
+  border: 1px solid #e20909;
+  box-shadow: 1px 1px 10px 0px rgba(247, 39, 3, 0.25);
+}
+
 .submitBtn {
   display: flex;
   padding: 16px 24px;
@@ -172,4 +181,22 @@
   @media screen and (min-width: 768px) {
     margin-top: 34px;
   }
+}
+
+.wrapError {
+  position: relative;
+  width: 100%;
+}
+
+.error {
+  position: absolute;
+  bottom: 57px;
+  left: 145px;
+  color: red;
+  font-size: 14px;
+  padding: 0 5px 0 5px;
+}
+
+.submitBtnDis {
+  background-color: #9a9a9a;
 }

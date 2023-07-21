@@ -1,8 +1,107 @@
-import React from 'react';
-import styles from './Form.module.css';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import styles from './Form.module.css';
 
-const Form = () => {
+const Form = ({ closeModal }) => {
+  const [userName, setUserName] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const [dirtyUserName, setDirtyUserName] = useState(false);
+  const [dirtyPhone, setDirtyPhone] = useState(false);
+
+  const [errorUserName, setErrorUserName] = useState('Заповніть це поле');
+  const [errorPhone, setErrorPhone] = useState('Заповніть це поле');
+
+  const [validForm, setvalidForm] = useState(false);
+
+  useEffect(() => {
+    if (errorUserName || errorPhone) {
+      setvalidForm(false);
+    } else {
+      setvalidForm(true);
+    }
+  }, [errorUserName, errorPhone]);
+
+  const validateName = value => {
+    if (value.length < 2) {
+      setErrorUserName('Ім’я має бути довшим');
+      if (value.length === 0) {
+        setErrorUserName('Заповніть це поле');
+      }
+    } else {
+      setErrorUserName('');
+    }
+  };
+
+  function validatePhone(phone) {
+    let re = /^\+\d{12}$/;
+
+    if (!re.test(phone)) {
+      setErrorPhone('+380123456789');
+    } else {
+      setErrorPhone('');
+    }
+  }
+
+  const handleChange = evt => {
+    const { name, value } = evt.target;
+
+    switch (name) {
+      case 'name':
+        if (evt.target.value.length > 30) return;
+        validateName(value);
+        setUserName(value);
+        break;
+
+      case 'phone':
+        if (evt.target.value.length > 13) return;
+        validatePhone(value);
+        setPhone(value);
+        break;
+
+      default:
+        return;
+    }
+  };
+
+  const handleBlur = evt => {
+    switch (evt.target.name) {
+      case 'name':
+        setDirtyUserName(true);
+        break;
+
+      case 'phone':
+        setDirtyPhone(true);
+        break;
+
+      default:
+        return;
+    }
+  };
+
+  const formSubmit = evt => {
+    evt.preventDefault();
+
+    const data = {
+      name: userName,
+      tel: phone,
+    };
+
+    console.log('data:', data);
+
+    closeModal();
+    reset();
+  };
+
+  const reset = () => {
+    setUserName('');
+    setPhone('');
+    setDirtyUserName(false);
+    setDirtyPhone(false);
+    setErrorUserName('Заповніть це поле');
+    setErrorPhone('Заповніть це поле');
+  };
+
   return (
     <>
       <section className={styles.container}>
@@ -23,7 +122,7 @@ const Form = () => {
             className={styles.yellowBuble}
           />
         </div>
-        <button className={styles.closeBtn}>
+        <button className={styles.closeBtn} onClick={closeModal}>
           <Image
             src="/sprite/icon_close_white.svg"
             fill={true}
@@ -32,28 +131,62 @@ const Form = () => {
           />
         </button>
         <div className={styles.ellipsePink}></div>
-        <form className={styles.form}>
-          <label htmlFor="">
-            <p className={styles.textInput}>Ім’я</p>
-            <input
-              type="text"
-              name="name"
-              placeholder="Введіть ім’я"
-              autoComplete="off"
-              className={styles.input}
-            />
-          </label>
-          <label htmlFor="">
-            <p className={styles.textInput}>Номер</p>
-            <input
-              type="text"
-              name="name"
-              placeholder="Введіть номер телефону"
-              autoComplete="off"
-              className={styles.input}
-            />
-          </label>
-          <button className={styles.submitBtn}>Залишити заявку</button>
+        <form className={styles.form} onSubmit={formSubmit}>
+          <div className={styles.wrapError}>
+            {dirtyUserName && errorUserName && (
+              <div className={styles.error}>{errorUserName}</div>
+            )}
+            <label htmlFor="">
+              <p className={styles.textInput}>Ім’я</p>
+              <input
+                type="text"
+                name="name"
+                value={userName}
+                placeholder="Введіть ім’я"
+                autoComplete="off"
+                className={
+                  errorUserName && dirtyUserName
+                    ? styles.input + ' ' + styles.inputError
+                    : styles.input
+                }
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </label>
+          </div>
+
+          <div className={styles.wrapError}>
+            {dirtyPhone && errorPhone && (
+              <div className={styles.error}>{errorPhone}</div>
+            )}
+            <label htmlFor="">
+              <p className={styles.textInput}>Номер</p>
+              <input
+                type="tel"
+                name="phone"
+                value={phone}
+                placeholder="Введіть номер телефону"
+                autoComplete="off"
+                className={
+                  errorPhone && dirtyPhone
+                    ? styles.input + ' ' + styles.inputError
+                    : styles.input
+                }
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </label>
+          </div>
+          <button
+            className={
+              !validForm
+                ? styles.submitBtn + ' ' + styles.submitBtnDis
+                : styles.submitBtn
+            }
+            disabled={!validForm}
+          >
+            Залишити заявку
+          </button>
         </form>
       </section>
     </>

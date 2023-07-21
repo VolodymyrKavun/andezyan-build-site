@@ -1,10 +1,23 @@
+'use client';
+import { useState } from 'react';
 import Image from 'next/image';
-import SLButton from '../../screens/SLButton/SLButton';
+import SLButton from '../../share/SLButton/SLButton';
+import Modal from '@/components/share/Modal/Modal';
+import Form from '@/components/share/Form/Form';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <>
+      <Modal active={showModal} closeModal={closeModal}>
+        <Form closeModal={closeModal} />
+      </Modal>
       <div className={styles.container}>
         <div className={styles.wrapLogo}>
           <Image
@@ -18,7 +31,9 @@ const HomePage = () => {
         <h1 className={styles.text}>
           Ми будуємо найкраще для <span className={styles.selection}>Вас</span>
         </h1>
-        <button className={styles.btnOrder}>Залишити заявку</button>
+        <button className={styles.btnOrder} onClick={() => setShowModal(true)}>
+          Залишити заявку
+        </button>
         <SLButton />
       </div>
     </>
