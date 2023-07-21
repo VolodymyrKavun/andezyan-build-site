@@ -11,7 +11,6 @@ export const designCategory = {
       id: uuidv4(),
       src: '/certificates/qualification_lobas.webp',
       alt: 'Qualification lobas',
-      // category: 'sertificate',
     },
   ],
 
