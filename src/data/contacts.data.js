@@ -9,11 +9,11 @@ export const contactsData = {
     },
     telThird: {
         number: "+380674630606",
-        owner: "Анатолій"
+        owner: "Анатолій",
     },
     telFourth: {
         number: "+380456051228",
-        owner: "Офіс"
+        owner: "Офіс",
     },
-    emails: ["aoandezyan@gmail.com", "lotos0712@ukr.net"]
+    emails: ["aoandezyan@gmail.com", "lotos0712@ukr.net"],
 }

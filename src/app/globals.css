@@ -11,11 +11,12 @@ html {
 
 body {
   margin: 0;
+  box-sizing: border-box;
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--main-bg-color);
-  color: var(--main-color);
 }
 
 * {
@@ -64,8 +65,8 @@ button {
   border-radius: 8px;
 }
 
-body {
+/* body {
   background-color: #161616;
   box-sizing: border-box;
   margin: 0;
-}
+} */

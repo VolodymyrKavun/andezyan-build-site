@@ -4,12 +4,14 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import styles from './GallerySlider.module.css';
 import Slider from '@/components/share/Slider/Slider';
+import ButtonToBack from '@/components/share/ButtonToBack/ButtonToBack';
 import { imageGallerySliderData } from '@/data/imageGallerySlider.data';
 import { createPath } from '@/utils/createPath';
 import { getDataByParam } from '@/utils/getDataByParam';
 
+
 const GallerySlider = ({ params }) => {
-  // для кнопки "Повернутися"
+  // для кнопки "ButtonToBack"
   const router = useRouter();
   // для Lightbox
   const [index, setIndex] = useState(-1);
@@ -28,9 +30,7 @@ const GallerySlider = ({ params }) => {
 
   return (
     <section className={styles.container}>
-      <button className={styles.buttonToBack} onClick={() => router.back()}>
-        Повернутися
-      </button>
+      <ButtonToBack onClick={() => router.back()} />
       <div className={styles.imagesWrapper}>
         {dataByCategory.map((item, index) => {
           const path = createPath(params.category, item.photo);
