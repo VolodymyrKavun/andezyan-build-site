@@ -1,0 +1,45 @@
+.backdrop {
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100%;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s ease;
+
+  @media screen and (min-width: 968px) {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  @media screen and (max-height: 500px) {
+    align-items: flex-start;
+  }
+}
+
+.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modalContent {
+  opacity: 0;
+  transform: translateX(100vw);
+  transition: all 1s ease;
+}
+
+.activeContent {
+  opacity: 1;
+  transform: translateX(0);
+
+  padding: 50px;
+  background-color: rgb(106, 111, 116);
+}

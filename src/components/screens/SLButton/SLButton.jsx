@@ -38,7 +38,7 @@ const SLButton = () => {
           </Link>
         </li>
         <li>
-          <Link href="#" className={styles.link}>
+          <Link href="https://t.me/ao_angar" className={styles.link}>
             <Image
               className={styles.menu}
               src="/sprite/icon_telegram.svg"
@@ -49,7 +49,10 @@ const SLButton = () => {
           </Link>
         </li>
         <li>
-          <Link href="#" className={styles.link}>
+          <Link
+            href="viber://chat?number=%2B380685909988"
+            className={styles.link}
+          >
             <Image
               className={styles.menu}
               src="/sprite/icon_phone.svg"
@@ -60,7 +63,7 @@ const SLButton = () => {
           </Link>
         </li>
         <li>
-          <Link href="#" className={styles.link}>
+          <Link href="mailto:aoandezyan@gmail.com" className={styles.link}>
             <Image
               className={styles.menu}
               src="/sprite/icon_mail.svg"

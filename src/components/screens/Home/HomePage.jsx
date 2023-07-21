@@ -1,10 +1,20 @@
+'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 import SLButton from '../../screens/SLButton/SLButton';
+import Modal from '@/components/screens/Modal/Modal';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
+      <Modal active={showModal} closeModal={() => setShowModal(false)}>
+        <h2> Modal Content</h2>
+        <h2> Modal Content</h2>
+        <h2> Modal Content</h2>
+      </Modal>
       <div className={styles.container}>
         <div className={styles.wrapLogo}>
           <Image
@@ -18,7 +28,9 @@ const HomePage = () => {
         <h1 className={styles.text}>
           Ми будуємо найкраще для <span className={styles.selection}>Вас</span>
         </h1>
-        <button className={styles.btnOrder}>Залишити заявку</button>
+        <button className={styles.btnOrder} onClick={() => setShowModal(true)}>
+          Залишити заявку
+        </button>
         <SLButton />
       </div>
     </>
