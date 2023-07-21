@@ -1,19 +1,22 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import SLButton from '../../screens/SLButton/SLButton';
-import Modal from '@/components/screens/Modal/Modal';
+import SLButton from '../../share/SLButton/SLButton';
+import Modal from '@/components/share/Modal/Modal';
+import Form from '@/components/share/Form/Form';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <>
-      <Modal active={showModal} closeModal={() => setShowModal(false)}>
-        <h2> Modal Content</h2>
-        <h2> Modal Content</h2>
-        <h2> Modal Content</h2>
+      <Modal active={showModal} closeModal={closeModal}>
+        <Form closeModal={closeModal} />
       </Modal>
       <div className={styles.container}>
         <div className={styles.wrapLogo}>

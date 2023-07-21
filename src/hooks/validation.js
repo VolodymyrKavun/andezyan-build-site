@@ -33,8 +33,13 @@ export const useValidation = () => {
 
     const formSubmit = evt => {
         evt.preventDefault();
+        const data = {
+            name: userName,
+            tel: phone,
+        };
+        console.log('data:', data);
         reset();
-        // closeModal();
+        closeModal();
     };
 
     const reset = () => {
@@ -52,8 +57,6 @@ export const useValidation = () => {
             if (value.length === 0) {
                 setErrorUserName('Заповніть це поле');
             }
-        } else if (value.length > 30) {
-            setErrorUserName('Ім’я має бути коротшим');
         } else {
             setErrorUserName('');
         }
@@ -64,7 +67,7 @@ export const useValidation = () => {
         let re = /^\+\d{12}$/;
 
         if (!re.test(phone)) {
-            setErrorPhone('Не вірний формат');
+            setErrorPhone('+380123456789');
         } else {
             setErrorPhone('');
         }
@@ -109,6 +112,6 @@ export const useValidation = () => {
         userName, phone,
         dirtyUserName, dirtyPhone,
         errorUserName, errorPhone,
-        validForm, formRef, formSubmit, handleChange, handleBlur
+        validForm, formSubmit, handleChange, handleBlur
     };
 }
