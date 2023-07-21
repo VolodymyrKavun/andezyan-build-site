@@ -5,6 +5,7 @@
   background: url('/design/bg_image_design_min.jpg');
   background-position: center;
   background-size: cover;
+  min-height: 100vh;
 
   @media screen and (min-width: 768px) {
     padding: 80px 34px 80px 34px;
@@ -22,6 +23,7 @@
 .itemWrapper {
   width: 293px;
   height: 427px;
+  position: relative;
 
   @media screen and (min-width: 768px) {
     width: 369px;
@@ -57,13 +59,13 @@
 .icon {
   width: 100%;
   height: 100%;
-  filter: invert(27%) sepia(10%) saturate(11%) hue-rotate(335deg) brightness(100%) contrast(94%);
+  filter: invert(27%) sepia(10%) saturate(11%) hue-rotate(335deg)
+    brightness(100%) contrast(94%);
 }
 
 .title {
   color: #474747;
   text-align: center;
-  font-family: KoHo;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -81,7 +83,6 @@
 
 .text {
   color: #474747;
-  font-family: KoHo;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -104,11 +105,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* gap: 40px; */
-  background-color: #febb12;
+  background-color: var(--btn-bg-color);
   border: none;
   color: var(--main-color);
-  font-family: KoHo;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -122,6 +121,15 @@
   }
 }
 
+.button:hover,
+.button:focus {
+  background-color: #474747;
+  color: var(--btn-bg-color);
+  border: 1px solid var(--btn-bg-color);
+}
+
 .link {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
