@@ -2,6 +2,162 @@
     padding: 40px 16px 0px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 105px);
+
+    @media screen and (min-width: 1440px) {
+        display: block;
+        min-height: calc(100vh - 140px);
+        position: relative;
+        padding: 0;
+    }
+}
+
+.mapWrapper {
+    display: none;
+
+    @media screen and (min-width: 1440px) {
+        width: 100%;
+        display: block;
+    }
+}
+
+.dataWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 145px);
+
+    @media screen and (min-width: 1440px) {
+        position: absolute;
+        top: 12%;
+        left: 5%;
+        padding: 48px;
+        background-color: #222425;
+        display: block;
+        min-height: auto;
+    }
+
+}
+
+.phoneNumbersWrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 1440px) {
+        display: block;
+        margin-bottom: 72px;
+    }
+}
+
+.phoneContact {
+    display: flex;
+}
+
+.phoneContact:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.phoneSvg {
+    width: 24px;
+    height: 24px;
+    margin-right: 24px;
+}
+
+.phoneIcon {
+    fill: transparent;
+    stroke: var(--main-color);
+}
+
+.phoneNumber {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1.1px;
+    margin-right: 24px;
+}
+
+.phoneOwner {
+    font-size: 20px;
+    font-weight: 275;
+    line-height: normal;
+    letter-spacing: 1.1px;
+}
+
+.emailsWrapper {
+    @media screen and (min-width: 1440px) {
+        margin-bottom: 40px;
+    }
+}
+
+.emailContact {
+    display: flex;
+}
+
+.emailContact:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.emailSvg {
+    width: 24px;
+    height: 24px;
+    margin-right: 24px;
+}
+
+.emailIcon {
+    fill: transparent;
+    stroke: var(--main-color);
+}
+
+.email {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1.1px;
+}
+
+.socLinksWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.socContact:not(:last-child) {
+    margin-right: 24px;
+}
+
+.socSvg {
+    width: 52px;
+    height: 52px;
+    padding: 10px;
+    text-align: center;
+}
+
+.socSvg.youtube {
+    height: 59px;
+}
+
+.socIcon {
+    fill: transparent;
+    stroke: var(--main-color);
+}
+
+.facebook,
+.instagram,
+.telegram {
+    text-align: center;
+}
+
+
+
+
+
+/* .container {
+    padding: 40px 16px 0px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -106,4 +262,4 @@
 .instagram,
 .telegram {
     text-align: center;
-}
+} */

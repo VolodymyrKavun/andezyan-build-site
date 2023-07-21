@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     row-gap: 24px;
+    min-height: calc(100vh - 105px);
 
     @media screen and (min-width: 1440px) {
         flex-direction: row;
@@ -14,6 +15,7 @@
         background: linear-gradient(rgba(22, 22, 22, 0.50), rgba(22, 22, 22, 0.50)), url("/gallery-bg.webp");
         background-size: cover;
         background-position: 50% 56%;
+        min-height: calc(100vh - 140px);
     }
 }
 
@@ -31,11 +33,12 @@
     overflow: hidden;
     position: relative;
     border: 1px solid var(--btn-bg-color);
-    box-shadow: var(--cards-box-shadow) 5px 10px 15px;
+
 
     @media screen and (min-width: 1440px) {
         width: 380px;
         height: 380px;
+        box-shadow: var(--cards-box-shadow) 5px 10px 15px;
     }
 }
 
