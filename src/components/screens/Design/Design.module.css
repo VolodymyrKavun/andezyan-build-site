@@ -5,7 +5,7 @@
   background: url('/design/bg_image_design_min.jpg');
   background-position: center;
   background-size: cover;
-  min-height: 100vh;
+  min-height: calc(100vh - 140px);
 
   @media screen and (min-width: 768px) {
     padding: 80px 34px 80px 34px;

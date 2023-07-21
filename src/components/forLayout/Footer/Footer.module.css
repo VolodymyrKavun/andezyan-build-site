@@ -9,8 +9,35 @@
 
 .text {
   margin: 0;
-  color: #fff;
+  color: var(--main-color);
   font-size: 16px;
   /* text-decoration: underline; */
   /* font-weight: 600; */
+}
+
+.textNeon {
+  color: var(--main-color);
+  animation: neon 4s infinite;
+  font-size: 22px;
+}
+
+@keyframes neon {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px var(--main-color), 0 0 11px var(--main-color),
+      0 0 19px var(--main-color), 0 0 40px var(--btn-bg-color),
+      0 0 80px var(--btn-bg-color), 0 0 90px var(--btn-bg-color),
+      0 0 100px var(--btn-bg-color), 0 0 150px var(--btn-bg-color);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
 }
