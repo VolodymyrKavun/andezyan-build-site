@@ -5,6 +5,7 @@
   background: url('/design/bg_image_design_min.jpg');
   background-position: center;
   background-size: cover;
+  min-height: calc(100vh - 105px);
 
   @media screen and (min-width: 768px) {
     padding: 80px 34px 80px 34px;
@@ -22,10 +23,12 @@
 .itemWrapper {
   width: 293px;
   height: 427px;
+  position: relative;
+  overflow: hidden;
 
   @media screen and (min-width: 768px) {
     width: 369px;
-    height: 642px;
+    height: 100%;
   }
 }
 
@@ -57,13 +60,13 @@
 .icon {
   width: 100%;
   height: 100%;
-  filter: invert(27%) sepia(10%) saturate(11%) hue-rotate(335deg) brightness(100%) contrast(94%);
+  filter: invert(27%) sepia(10%) saturate(11%) hue-rotate(335deg)
+    brightness(100%) contrast(94%);
 }
 
 .title {
   color: #474747;
   text-align: center;
-  font-family: KoHo;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -81,13 +84,13 @@
 
 .text {
   color: #474747;
-  font-family: KoHo;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.77px;
   width: 245px;
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -104,16 +107,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* gap: 40px; */
-  background-color: #febb12;
+  background-color: var(--btn-bg-color);
   border: none;
   color: var(--main-color);
-  font-family: KoHo;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.88px;
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     width: 226px;
@@ -124,4 +126,32 @@
 
 .link {
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.blobWrapper {
+  width: 900px;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+}
+
+.iconBlob {
+  width: 100%;
+  height: 100%;
+}
+
+.item:hover .blobWrapper,
+.item:focus .blobWrapper {
+  top: 0;
+  left: 0;
+}
+
+.item:hover .button,
+.item:focus .button {
+  background-color: var(--main-color);
+  color: #545454;
+  border: 1px solid #bfbfbf;
 }

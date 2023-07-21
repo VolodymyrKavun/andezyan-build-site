@@ -6,13 +6,11 @@ export const designCategory = {
       id: uuidv4(),
       src: '/certificates/certificate_lobas.webp',
       alt: 'Certificate lobas',
-      // category: 'sertificate',
     },
     {
       id: uuidv4(),
       src: '/certificates/qualification_lobas.webp',
       alt: 'Qualification lobas',
-      // category: 'sertificate',
     },
   ],
 
@@ -76,8 +74,26 @@ export const designCategory = {
   visualization: [
     {
       id: uuidv4(),
+      src: '/visualization/angar_dark_grey_front_before.webp',
+      alt: 'angar_dark_grey_front_before',
+      // category: 'visualization',
+    },
+    {
+      id: uuidv4(),
+      src: '/visualization/angar_dark_grey_front_after.webp',
+      alt: 'angar_dark_grey_front_after',
+      // category: 'visualization',
+    },
+    {
+      id: uuidv4(),
       src: '/visualization/angar_dark_grey_front.webp',
       alt: 'angar_dark_grey_front',
+      // category: 'visualization',
+    },
+    {
+      id: uuidv4(),
+      src: '/visualization/angar_dark_grey_front_after_right.webp',
+      alt: 'angar_dark_grey_front_after_right',
       // category: 'visualization',
     },
     {
@@ -90,6 +106,12 @@ export const designCategory = {
       id: uuidv4(),
       src: '/visualization/angar_grey_front_dark_gate.webp',
       alt: 'angar_grey_front_dark_gate',
+      // category: 'visualization',
+    },
+    {
+      id: uuidv4(),
+      src: '/visualization/two_angars_grey_yellow_first.webp',
+      alt: 'two_angars_grey_yellow_first',
       // category: 'visualization',
     },
     {

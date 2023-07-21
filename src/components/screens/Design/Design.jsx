@@ -26,6 +26,14 @@ const Design = () => {
                 <Link href={`/design/${item.category}`} className={styles.link}>
                   <button className={styles.button}>{item.textButton}</button>
                 </Link>
+                <div className={styles.blobWrapper}>
+                  <Image
+                    src="/sprite/icon_blob_yellow.svg"
+                    alt="Blob yellow"
+                    fill={true}
+                    className={styles.iconBlob}
+                  />
+                </div>
               </div>
             </li>
           ))}

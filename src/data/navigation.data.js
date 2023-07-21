@@ -14,7 +14,7 @@ export const navigationData = [
   },
   {
     id: uuidv4(),
-    title: 'Планування',
+    title: 'Проектування',
     path: '/design',
   },
   {

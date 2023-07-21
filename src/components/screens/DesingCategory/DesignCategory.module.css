@@ -5,6 +5,7 @@
   background: url('/design/bg_image_design_min.jpg');
   background-position: center;
   background-size: cover;
+  min-height: calc(100vh - 105px);
 }
 
 .list {
@@ -25,7 +26,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--btn-bg-color);
   cursor: pointer;
 
   @media screen and (min-width: 1440px) {
@@ -43,7 +43,6 @@
 }
 
 .buttonToBack {
-  padding: 0px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,17 +52,17 @@
 }
 
 .buttonToBack:hover {
-  transform: translateX(-0.3cem);
+  transform: translateX(-0.4rem);
 }
 
 .iconBackWrapper {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   position: relative;
 }
 
 .iconBack {
   border-radius: 50%;
-  background-color: #febb12;
+  background-color: var(--btn-bg-color);
   transform: rotate(90deg);
 }

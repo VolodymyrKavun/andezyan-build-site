@@ -2,6 +2,7 @@ import './globals.css';
 import { KoHo } from 'next/font/google';
 import Footer from '@/components/forLayout/Footer/Footer';
 import Header from '@/components/forLayout/Header/Header';
+import BackToTop from '@/components/ui/BackToTop/BackToTop';
 
 const koHo = KoHo({
   subsets: ['latin'],
@@ -20,6 +21,8 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <BackToTop />
+        <div id="modal"></div>
       </body>
     </html>
   );

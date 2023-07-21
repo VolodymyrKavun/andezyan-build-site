@@ -5,7 +5,10 @@ const Footer = () => {
   return (
     <footer>
       <div className={styles.container}>
-        <p className={styles.text}>Copyright © 2023 Webevery. Всі права захищено.</p>
+        <p className={styles.text}>
+          Copyright &copy; 2023
+          <span className={styles.textNeon}>Webevery</span>. Всі права захищено.
+        </p>
       </div>
     </footer>
   );
