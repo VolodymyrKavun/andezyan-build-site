@@ -6,7 +6,6 @@ export const designCategory = {
       id: uuidv4(),
       src: '/certificates/certificate_lobas.webp',
       alt: 'Certificate lobas',
-      // category: 'sertificate',
     },
     {
       id: uuidv4(),

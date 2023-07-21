@@ -24,10 +24,11 @@
   width: 293px;
   height: 427px;
   position: relative;
+  overflow: hidden;
 
   @media screen and (min-width: 768px) {
     width: 369px;
-    height: 642px;
+    height: 100%;
   }
 }
 
@@ -89,6 +90,7 @@
   line-height: normal;
   letter-spacing: 0.77px;
   width: 245px;
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -113,6 +115,7 @@
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.88px;
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     width: 226px;
@@ -121,15 +124,34 @@
   }
 }
 
-.button:hover,
-.button:focus {
-  background-color: #474747;
-  color: var(--btn-bg-color);
-  border: 1px solid var(--btn-bg-color);
-}
-
 .link {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.blobWrapper {
+  width: 900px;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+}
+
+.iconBlob {
+  width: 100%;
+  height: 100%;
+}
+
+.item:hover .blobWrapper,
+.item:focus .blobWrapper {
+  top: 0;
+  left: 0;
+}
+
+.item:hover .button,
+.item:focus .button {
+  background-color: var(--main-color);
+  color: #545454;
+  border: 1px solid #bfbfbf;
 }
