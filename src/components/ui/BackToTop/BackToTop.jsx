@@ -1,40 +1,41 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './BackToTop.module.css';
 import Image from 'next/image';
 
 const BackToTop = () => {
-  window.onscroll = function () {
-    scrollFunction();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleIsVisible = () => {
+    if (window.scrollY > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
   };
 
-  function scrollFunction() {
-    let backToTop = document.getElementById('backToTop');
-    if (!backToTop) return;
-    if (
-      document.body.scrollTop >= 200 ||
-      document.documentElement.scrollTop >= 200
-    ) {
-      // backToTop.style.display = 'block';
-      backToTop.className = styles.backToTop__visible;
-    } else {
-      // backToTop.style.display = 'none';
-      backToTop.className = styles.backToTop;
-    }
-  }
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
-  function topFunction() {
-    document.body.scrollTop = 0; //For Safari
-    document.documentElement.scrollTop = 0;
-  }
+  useEffect(() => {
+    window.addEventListener('scroll', toggleIsVisible);
+
+    return () => {
+      window.removeEventListener('scroll', toggleIsVisible);
+    };
+  }, []);
 
   return (
     <>
       <button
         id="backToTop"
         type="button"
-        onClick={topFunction}
-        className={`${styles.backToTop} ${scrollFunction()}`}
+        onClick={scrollToTop}
+        className={isVisible ? styles.visible : styles.notVisible}
         aria-label="backToTop"
       >
         <div className={styles.iconBackWrapper}>

@@ -1,29 +1,17 @@
-.backToTop,
-.backToTop__visible {
-  position: fixed;
-  right: 20px;
-  z-index: 10;
-  justify-content: center;
-  align-items: center;
+.visible {
+  opacity: 100;
   border-radius: 50%;
-  font-size: 18px;
-  background-color: var(--btn-bg-color);
-
-  @media screen and (min-width: 425px) {
-    right: 30px;
-  }
-}
-
-.backToTop__visible {
-  bottom: 40px;
   border: none;
+  position: fixed;
+  bottom: 40px;
+  right: 26px;
 }
 
-.backToTop {
-  bottom: -72px;
+.notVisible {
+  opacity: 0;
 }
 
-.backToTop__visible:hover {
+.visible:hover {
   transform: translateY(-0.4rem);
 }
 
@@ -31,6 +19,8 @@
   width: 38px;
   height: 38px;
   position: relative;
+  background-color: var(--btn-bg-color);
+  border-radius: 50%;
 }
 
 .backToTopIcon {
