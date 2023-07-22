@@ -13,7 +13,7 @@ const Contacts = () => {
 
   const phonesArr = createArrOfNeededObjProperties(contactsData, neededPhoneProperties);
 
-  const neededSocLinksProperties = ["facebook", "youtube", "instagram", "telegram"];
+  const neededSocLinksProperties = ["viber", "telegram"];
   const socLinksArr = createArrOfNeededObjProperties(socialMaxData, neededSocLinksProperties);
 
 
