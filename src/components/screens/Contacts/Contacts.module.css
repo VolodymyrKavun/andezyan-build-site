@@ -6,21 +6,29 @@
     width: 100%;
     min-height: calc(100vh - 105px);
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
         display: block;
-        min-height: calc(100vh - 140px);
+        min-height: calc(100vh - 105px);
         position: relative;
         padding: 0;
+    }
+
+    @media screen and (min-width: 1440px) {
+        min-height: calc(100vh - 140px);
     }
 }
 
 .mapWrapper {
     display: none;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
         width: 100%;
-        height: calc(100vh - 140px);
+        height: calc(100vh - 105px);
         display: block;
+    }
+
+    @media screen and (min-width: 1440px) {
+        height: calc(100vh - 140px);
     }
 }
 
@@ -31,40 +39,54 @@
     justify-content: space-between;
     min-height: calc(100vh - 145px);
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
         position: absolute;
         top: 12%;
         left: 5%;
-        padding: 48px;
+        padding: 12px;
         background-color: #222425;
-        display: block;
+        gap: 20px;
         min-height: auto;
     }
 
+    @media screen and (min-width: 1440px) {
+        padding: 48px;
+        gap: 0px;
+    }
 }
 
 .phoneNumbersWrapper {
     display: flex;
     flex-direction: column;
+    gap: 16px;
 
     @media screen and (min-width: 1440px) {
-        display: block;
         margin-bottom: 72px;
     }
 }
 
 .phoneContact {
     display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media screen and (min-width: 768px) {
+        gap: 16px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        gap: 24px;
+    }
 }
 
-.phoneContact:not(:last-child) {
-    margin-bottom: 16px;
+.phoneContact:hover,
+.phoneContact:focus {
+    color: var(--second-color);
 }
 
 .phoneSvg {
     width: 24px;
     height: 24px;
-    margin-right: 24px;
 }
 
 .phoneIcon {
@@ -72,12 +94,25 @@
     stroke: var(--main-color);
 }
 
+.phoneContact:hover .phoneIcon,
+.phoneContact:focus .phoneIcon {
+    fill: var(--second-color);
+    stroke: var(--second-color);
+}
+
 .phoneNumber {
     font-size: 20px;
     font-weight: 300;
     line-height: normal;
     letter-spacing: 1.1px;
-    margin-right: 24px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 14px;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 20px;
+    }
 }
 
 .phoneOwner {
@@ -85,9 +120,21 @@
     font-weight: 275;
     line-height: normal;
     letter-spacing: 1.1px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 14px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        font-size: 20px;
+    }
 }
 
 .emailsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
     @media screen and (min-width: 1440px) {
         margin-bottom: 40px;
     }
@@ -95,21 +142,28 @@
 
 .emailContact {
     display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
-.emailContact:not(:last-child) {
-    margin-bottom: 16px;
+.emailContact:hover,
+.emailContact:focus {
+    color: var(--second-color);
 }
 
 .emailSvg {
     width: 24px;
     height: 24px;
-    margin-right: 24px;
 }
 
 .emailIcon {
     fill: transparent;
     stroke: var(--main-color);
+}
+
+.emailContact:hover .emailIcon,
+.emailContact:focus .emailIcon {
+    stroke: var(--second-color);
 }
 
 .email {
@@ -118,16 +172,20 @@
     font-weight: 300;
     line-height: normal;
     letter-spacing: 1.1px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 14px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        font-size: 20px;
+    }
 }
 
 .socLinksWrapper {
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.socContact:not(:last-child) {
-    margin-right: 24px;
+    gap: 24px;
 }
 
 .socSvg {
@@ -158,17 +216,17 @@
     stroke: transparent;
 }
 
-.viber:hover {
+.socContact:hover .viber,
+.socContact:focus .viber {
     fill: #665cac;
 }
 
 .telegram {
     fill: var(--main-color);
     stroke: transparent;
-    /* border-radius: 50%;
-    background-color: #229ed9; */
 }
 
-.telegram:hover {
+.socContact:hover .telegram,
+.socContact:focus .telegram {
     fill: #229ed9;
 }
