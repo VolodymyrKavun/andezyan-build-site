@@ -130,18 +130,38 @@ const Map = () => {
 
     // static lat and lng   
     const placeCoords = { lat: 49.819637, lng: 30.142945 };
+    // for showing few markers
+    const markers = [
+        { lat: 49.819637, lng: 30.142945 },
+        { lat: 49.369629, lng: 29.683630 },
+    ];
+
+    // LatLngBounds: It is an instance which represents a geographical rectangle from the points at its south - west and north - east corners.
+    //extend method: It extends the map bounds to contain the given point.
+    //fitBounds method: It accepts the bounds as a parameter and sets the map viewport to contain the given bounds.
+    const onLoad = (map) => {
+        const bounds = new google.maps.LatLngBounds();
+        markers?.forEach(({ lat, lng }) => bounds.extend({ lat, lng }));
+        map.fitBounds(bounds);
+    };
 
 
     return <>
         {(isLoaded) && <GoogleMap
             zoom={13}
-            center={placeCoords}
+            // center={placeCoords}
             mapContainerClassName="map"
-            mapContainerStyle={{ width: "100%", height: "830px", margin: "auto" }}
+            mapContainerStyle={{ width: "100%", height: "100%" }}
+            onLoad={onLoad}
         >
-            <Marker
+            {/* <Marker
                 position={placeCoords}
-                icon={"http://maps.google.com/mapfiles/kml/pal2/icon0.png"} />
+                icon={"/Andezyan_logo_mini.svg"}
+            /> */}
+            {markers.map(({ lat, lng }, index) => (
+                <Marker key={index} position={{ lat, lng }}
+                    icon={"/Andezyan_logo_mini.svg"} />
+            ))}
         </GoogleMap>
         }</>
 };

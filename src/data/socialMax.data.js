@@ -37,7 +37,7 @@ export const socialMaxData = {
     },
     viber: {
         name: "viber",
-        icon: "",
+        icon: "/sprite.svg#icon_viber",
         path: "viber://chat?number=%2B380685909988",
         content: "",
     }
