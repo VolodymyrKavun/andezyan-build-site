@@ -19,6 +19,7 @@
 
     @media screen and (min-width: 1440px) {
         width: 100%;
+        height: calc(100vh - 140px);
         display: block;
     }
 }

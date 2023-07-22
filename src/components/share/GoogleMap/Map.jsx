@@ -137,11 +137,12 @@ const Map = () => {
             zoom={13}
             center={placeCoords}
             mapContainerClassName="map"
-            mapContainerStyle={{ width: "100%", height: "830px", margin: "auto" }}
+            mapContainerStyle={{ width: "100%", height: "100%" }}
         >
             <Marker
                 position={placeCoords}
-                icon={"http://maps.google.com/mapfiles/kml/pal2/icon0.png"} />
+                icon={"/Andezyan_logo_mini.svg"}
+            />
         </GoogleMap>
         }</>
 };
