@@ -24,7 +24,9 @@
     @media screen and (min-width: 768px) {
         width: 100%;
         height: calc(100vh - 105px);
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     @media screen and (min-width: 1440px) {
@@ -90,11 +92,6 @@
 }
 
 .phoneIcon {
-    fill: transparent;
-    stroke: transparent;
-}
-
-.phoneSvg:not {
     fill: transparent;
     stroke: transparent;
 }

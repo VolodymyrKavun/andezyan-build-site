@@ -1,124 +1,182 @@
-// import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-
-
-// const Map = () => {
-
-//     // load script for google map
-//     const { isLoaded } = useLoadScript({
-//         googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-//         libraries: ["places"],
-//     });
-
-//     // for showing few markers
-//     const markers = [
-//         { lat: 49.819637, lng: 30.142945 },
-//         { lat: 49.369629, lng: 29.683630 },
-//     ];
-
-//     // LatLngBounds: It is an instance which represents a geographical rectangle from the points at its south - west and north - east corners.
-//     //extend method: It extends the map bounds to contain the given point.
-//     //fitBounds method: It accepts the bounds as a parameter and sets the map viewport to contain the given bounds.
-//     const onLoad = (map) => {
-//         const bounds = new google.maps.LatLngBounds();
-//         markers?.forEach(({ lat, lng }) => bounds.extend({ lat, lng }));
-//         map.fitBounds(bounds);
-//     };
-
-
-//     return <>
-//         {(isLoaded) && <GoogleMap
-//             zoom={13}
-//             mapContainerClassName="map"
-//             mapContainerStyle={{ width: "100%", height: "100%" }}
-//             onLoad={onLoad}
-//         >
-//             {markers.map(({ lat, lng }, index) => (
-//                 <Marker key={index} position={{ lat, lng }}
-//                     icon={"/Andezyan_logo_mini.svg"}
-//                 />
-//             ))}
-//         </GoogleMap>
-//         }</>
-// };
-
-
-// export default Map;
-
-
-
-
-
-
-
-
-/* global google */
-import { GoogleMap, InfoWindow, Marker, useLoadScript } from "@react-google-maps/api";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { GoogleMap, useLoadScript, Marker, InfoWindow, Autocomplete } from "@react-google-maps/api";
 
 
 const Map = () => {
-    const { isLoaded } = useLoadScript({
-        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-    });
+    // save place, selected in search input
+    const [selectedPlace, setSelectedPlace] = useState(null);
+    // save {lat, lng} of place, selected in search input
+    const [searchLngLat, setSearchLngLat] = useState(null);
+    // save data, when user clicked on the map
+    const [currentLocation, setCurrentLocation] = useState(null);
+    // for Autocomplete Component
+    const autocompleteRef = useRef(null);
+    // const [address, setAddress] = useState("");
     // state for Marker
     const [isOpen, setIsOpen] = useState(false);
     // state for InfoWindowData
     const [infoWindowData, setInfoWindowData] = useState();
+    // starts settings
+    const [mapCenter, setMapCenter] = useState({ lat: 49.819637, lng: 30.142945 })
 
+    // laod script for google map
+    const { isLoaded } = useLoadScript({
+        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+        libraries: ["places"],
+    });
+
+    if (!isLoaded) return <div>Loading....</div>;
+
+    // static lat and lng
+    // const center = { lat: 'YOUR-LATITUDE', lng: 'YOUR-LONGITUDE' };
+
+    // for showing few markers
     const markers = [
-        { address: "Фізична aдреса: 09100, Київська обл., Білоцерківський р-н, м. Біла Церква, вул. Київська, 96.", lat: 49.819637, lng: 30.142945 },
-        { address: "Юридична адреса: 09800, Київська обл., Білоцерківський р-н, м. Тетіїв, вул. Соборна, 68, к.18", lat: 49.369629, lng: 29.683630 },
+        { address: "Фізична aдреса: 09100, Київська область, Білоцерківський район, місто Біла Церква, вулиця Київська, 96.", lat: 49.819637, lng: 30.142945 },
+        { address: "Юридична адреса: 09800, Київська область, Білоцерківський район, місто Тетіїв, вулиця Соборна, 68, к.18", lat: 49.369629, lng: 29.683630 },
     ];
 
-    // LatLngBounds: It is an instance which represents a geographical rectangle from the points at its south - west and north - east corners.
-    //extend method: It extends the map bounds to contain the given point.
-    //fitBounds method: It accepts the bounds as a parameter and sets the map viewport to contain the given bounds.
+
+    // handle place change on search
+    const handlePlaceChanged = () => {
+        // get data about entered in search input place 
+        const place = autocompleteRef.current.getPlace();
+        // save data in state
+        setSelectedPlace(place);
+        // save data in state
+        setSearchLngLat({
+            lat: place.geometry.location.lat(),
+            lng: place.geometry.location.lng(),
+        });
+        // reset data of current location
+        setCurrentLocation(null);
+    };
+
+
+    // get current location
+    const handleGetLocationClick = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    // get lat and lng
+                    const { latitude, longitude } = position.coords;
+                    // reset
+                    setSelectedPlace(null);
+                    // reset
+                    setSearchLngLat(null);
+                    // save to state
+                    setCurrentLocation({ lat: latitude, lng: longitude });
+                },
+                (error) => {
+                    console.log(error);
+                }
+            );
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+    };
+
+
+    const handleMarkerClick = (id, address, lat, lng) => {
+        setInfoWindowData({ id, address });
+        setIsOpen(true);
+        setCurrentLocation(null);
+        setSearchLngLat(null);
+        setMapCenter({ lat, lng });
+    };
+
+    // work on every map loading 
     const onMapLoad = (map) => {
+        // for getLocation button's settings
+        // wrapper for button
+        const controlDiv = document.createElement("div");
+        // button styles
+        const controlUI = document.createElement("div");
+        controlUI.innerHTML = "Моя геолокация";
+        controlUI.style.backgroundColor = "#febb12";
+        controlUI.style.color = "#fff";
+        // controlUI.style.border = "2px solid #000";
+        // controlUI.style.borderRadius = "3px";
+        // controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+        controlUI.style.cursor = "pointer";
+        // controlUI.style.marginBottom = "22px";
+        controlUI.style.textAlign = "center";
+        controlUI.style.width = "100%";
+        controlUI.style.fontSize = "16px";
+        controlUI.style.padding = "8px";
+        controlUI.addEventListener("click", handleGetLocationClick);
+        controlDiv.appendChild(controlUI);
+
+        // const centerControl = new window.google.maps.ControlPosition(
+        //   window.google.maps.ControlPosition.TOP_CENTER,
+        //   0,
+        //   10
+        // );
+
+        // set button in the center of the map
+        map.controls[window.google.maps.ControlPosition.TOP_CENTER].push(
+            controlDiv
+        );
+
+        // for markers
+        // LatLngBounds: It is an instance which represents a geographical rectangle from the points at its south - west and north - east corners.
         const bounds = new google.maps.LatLngBounds();
+        //extend method: It extends the map bounds to contain the given point.
         markers?.forEach(({ lat, lng }) => bounds.extend({ lat, lng }));
+        //fitBounds method: It accepts the bounds as a parameter and sets the map viewport to contain the given bounds.
         map.fitBounds(bounds);
     };
 
-    const handleMarkerClick = (id, address) => {
-        setInfoWindowData({ id, address });
-        setIsOpen(true);
-    };
 
     return (
         <>
-            {!isLoaded ? (
-                <h1>Loading...</h1>
-            ) : (
-                <GoogleMap
-                    mapContainerClassName="map"
-                    mapContainerStyle={{ width: "100%", height: "100%", color: "black", textAlign: "center" }}
-                    onLoad={onMapLoad}
-                    onClick={() => setIsOpen(false)}
-                >
-                    {markers.map(({ address, lat, lng }, ind) => (
-                        <Marker
-                            key={ind}
-                            position={{ lat, lng }}
-                            icon={"/Andezyan_logo_mini.svg"}
-                            onClick={() => {
-                                handleMarkerClick(ind, address);
-                            }}
-                        >
-                            {isOpen && infoWindowData?.id === ind && (
-                                <InfoWindow
-                                    onCloseClick={() => {
-                                        setIsOpen(false);
-                                    }}
-                                >
-                                    <h3 style={{ width: "180px" }}>{infoWindowData.address}</h3>
-                                </InfoWindow>
-                            )}
-                        </Marker>
-                    ))}
-                </GoogleMap>
-            )}
+            {/* search component  */}
+            <Autocomplete
+                onLoad={(autocomplete) => {
+                    // console.log("Autocomplete loaded:", autocomplete);
+                    autocompleteRef.current = autocomplete;
+                }}
+                onPlaceChanged={handlePlaceChanged}
+                options={{ fields: ["address_components", "geometry", "name"] }}
+            >
+                <input type="text" placeholder="Search for a location" />
+            </Autocomplete>
+
+            {/* map component  */}
+            <GoogleMap
+                zoom={currentLocation || selectedPlace ? 18 : 12}
+                center={currentLocation || searchLngLat || mapCenter}
+                mapContainerClassName="map"
+                mapContainerStyle={{ width: "100%", height: "100%", color: "black" }}
+                onLoad={onMapLoad}
+            >
+                {selectedPlace && <Marker position={searchLngLat} />}
+                {currentLocation && <Marker position={currentLocation} />}
+
+                {markers.map(({ address, lat, lng }, ind) => (
+                    <Marker
+                        key={ind}
+                        position={{ lat, lng }}
+                        icon={"/Andezyan_logo_mini.svg"}
+                        onClick={() => {
+                            handleMarkerClick(ind, address, lat, lng);
+                        }}
+                    >
+                        {isOpen && infoWindowData?.id === ind && (
+                            <InfoWindow
+                                onCloseClick={() => {
+                                    setIsOpen(false);
+                                }}
+                            >
+                                <h3 style={{ width: "180px" }}>{infoWindowData.address}</h3>
+                            </InfoWindow>
+                        )}
+                    </Marker>
+                ))}
+            </GoogleMap>
         </>
     );
 };
+
 
 export default Map;
