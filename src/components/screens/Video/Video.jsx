@@ -6,6 +6,9 @@ const Video = () => {
   return (
     <>
       <section className={styles.containerVideo}>
+        <h1 className={styles.titleHidden}>
+          Відеоматеріали будівельної компанії Андезян
+        </h1>
         <ul className={styles.listVideo}>
           {videosData.map(el => {
             return (

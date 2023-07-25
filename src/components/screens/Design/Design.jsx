@@ -9,6 +9,7 @@ const Design = () => {
   return (
     <>
       <section className={styles.container}>
+        <h1 className={styles.titleHidden}>Проектна документація</h1>
         <ul className={styles.list}>
           {designData.map(item => (
             <li className={styles.itemWrapper} key={item.id}>

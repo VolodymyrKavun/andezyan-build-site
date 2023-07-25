@@ -46,8 +46,9 @@ const BackToTop = () => {
           <Image
             src="/sprite/icon_arrow-down-circle.svg"
             alt="Кнопка до гори"
-            fill={true}
             className={styles.backToTopIcon}
+            width={38}
+            height={38}
           />
         </div>
       </button>
