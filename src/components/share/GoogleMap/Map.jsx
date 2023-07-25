@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
 import { GoogleMap, useLoadScript, Marker, InfoWindow, Autocomplete } from "@react-google-maps/api";
+import { createArrOfNeededObjProperties } from "@/utils/createArrOfNeededObjProperties";
+import { contactsData } from "@/data/contacts.data";
 
 
 const Map = () => {
@@ -11,8 +13,7 @@ const Map = () => {
     const [currentLocation, setCurrentLocation] = useState(null);
     // for Autocomplete Component
     const autocompleteRef = useRef(null);
-    // const [address, setAddress] = useState("");
-    // state for Marker
+    // state of Marker's InfoWindowData
     const [isOpen, setIsOpen] = useState(false);
     // state for InfoWindowData
     const [infoWindowData, setInfoWindowData] = useState();
@@ -27,15 +28,10 @@ const Map = () => {
 
     if (!isLoaded) return <div>Loading....</div>;
 
-    // static lat and lng
-    // const center = { lat: 'YOUR-LATITUDE', lng: 'YOUR-LONGITUDE' };
-
+    // properties from contactsData
+    const neededProperties = ["physicalAddress", "registrationAddress"];
     // for showing few markers
-    const markers = [
-        { address: "Фізична aдреса: 09100, Київська область, Білоцерківський район, місто Біла Церква, вулиця Київська, 96.", lat: 49.819637, lng: 30.142945 },
-        { address: "Юридична адреса: 09800, Київська область, Білоцерківський район, місто Тетіїв, вулиця Соборна, 68, к.18", lat: 49.369629, lng: 29.683630 },
-    ];
-
+    const markers = createArrOfNeededObjProperties(contactsData, neededProperties);
 
     // handle place change on search
     const handlePlaceChanged = () => {
@@ -77,13 +73,15 @@ const Map = () => {
     };
 
 
-    const handleMarkerClick = (id, address, lat, lng) => {
-        setInfoWindowData({ id, address });
+    const handleMarkerClick = (id, address, lat, lng, googleLink) => {
+        // save data for InfoWindowData
+        setInfoWindowData({ id, address, googleLink });
         setIsOpen(true);
         setCurrentLocation(null);
         setSearchLngLat(null);
         setMapCenter({ lat, lng });
     };
+
 
     // work on every map loading 
     const onMapLoad = (map) => {
@@ -144,7 +142,7 @@ const Map = () => {
 
             {/* map component  */}
             <GoogleMap
-                zoom={currentLocation || selectedPlace ? 18 : 12}
+                zoom={currentLocation || selectedPlace || mapCenter ? 18 : 12}
                 center={currentLocation || searchLngLat || mapCenter}
                 mapContainerClassName="map"
                 mapContainerStyle={{ width: "100%", height: "100%", color: "black" }}
@@ -153,13 +151,13 @@ const Map = () => {
                 {selectedPlace && <Marker position={searchLngLat} />}
                 {currentLocation && <Marker position={currentLocation} />}
 
-                {markers.map(({ address, lat, lng }, ind) => (
+                {markers.map(({ address, lat, lng, googleLink }, ind) => (
                     <Marker
                         key={ind}
                         position={{ lat, lng }}
                         icon={"/Andezyan_logo_mini.svg"}
                         onClick={() => {
-                            handleMarkerClick(ind, address, lat, lng);
+                            handleMarkerClick(ind, address, lat, lng, googleLink);
                         }}
                     >
                         {isOpen && infoWindowData?.id === ind && (
@@ -168,7 +166,9 @@ const Map = () => {
                                     setIsOpen(false);
                                 }}
                             >
-                                <h3 style={{ width: "180px" }}>{infoWindowData.address}</h3>
+                                <h3 style={{ width: "180px" }}>
+                                    <a href={infoWindowData.googleLink} target="_blank" rel="noopener noreferrer nofollow">{infoWindowData.address}</a>
+                                </h3>
                             </InfoWindow>
                         )}
                     </Marker>
