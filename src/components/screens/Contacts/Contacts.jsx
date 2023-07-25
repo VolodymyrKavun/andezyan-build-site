@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import Map from '@/components/share/GoogleMap/Map.jsx'
+import Map from '@/components/share/GoogleMap/Map.jsx';
 
 import styles from './Contacts.module.css';
 import { contactsData } from '@/data/contacts.data';
@@ -12,6 +12,12 @@ const Contacts = () => {
   const neededPhoneProperties = ["telFirst", "telSecond", "telThird", "telFourth"];
 
   const phonesArr = createArrOfNeededObjProperties(contactsData, neededPhoneProperties);
+
+  const neededAdressesProperties = ["physicalAddress", "registrationAddress"];
+  const adressesArr = createArrOfNeededObjProperties(contactsData, neededAdressesProperties);
+
+  const physAddress = adressesArr[0].address.split(':')[0];
+  const registrAddress = adressesArr[1].address.split(':')[0];
 
   const neededSocLinksProperties = ["viber", "telegram"];
   const socLinksArr = createArrOfNeededObjProperties(socialMaxData, neededSocLinksProperties);
@@ -44,6 +50,21 @@ const Contacts = () => {
             <p className={styles.email}>{item}</p>
           </a>
         ))}
+      </div>
+
+      <div className={styles.addressesWrapper}>
+        <a href={adressesArr[0].googleLink} target="_blank" rel="noopener noreferrer nofollow" className={styles.addressContact}>
+          <svg className={styles.addressSvg}>
+            <use href="/sprite.svg#icon_navigation" className={styles.addressIcon}></use>
+          </svg>
+          <p className={styles.address}>{physAddress}</p>
+        </a>
+        <a href={adressesArr[1].googleLink} target="_blank" rel="noopener noreferrer nofollow" className={styles.addressContact}>
+          <svg className={styles.addressSvg}>
+            <use href="/sprite.svg#icon_navigation" className={styles.addressIcon}></use>
+          </svg>
+          <p className={styles.address}>{registrAddress}</p>
+        </a>
       </div>
 
       <div className={styles.socLinksWrapper}>
