@@ -22,7 +22,7 @@ const HomePage = () => {
         <div className={styles.wrapLogo}>
           <Image
             className={styles.imgLogo}
-            src="/Logo_AndezyanTR.svg"
+            src="/logo_gold_transparent.svg"
             alt="Logo big"
             width={172}
             height={189}
