@@ -22,6 +22,9 @@ const DesignCategory = ({ params }) => {
   return (
     <>
       <section className={styles.container}>
+        <h1 className={styles.titleHidden}>
+          Проектна документація та Візуалізація
+        </h1>
         <button className={styles.buttonToBack} onClick={() => router.back()}>
           <div className={styles.iconBackWrapper}>
             <Image

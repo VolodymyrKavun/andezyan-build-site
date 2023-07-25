@@ -17,6 +17,30 @@
   }
 }
 
+.titleHidden {
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
+.titleAboutUs {
+  color: var(--main-color);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.32px;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+    margin-bottom: 40px;
+  }
+}
+
 .listAboutUs {
   display: flex;
   flex-direction: column;
