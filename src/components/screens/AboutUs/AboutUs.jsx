@@ -5,6 +5,8 @@ import { aboutUsData } from '@/data/aboutUs.data';
 const AboutUs = () => {
   return (
     <section className={styles.container}>
+      <h1 className={styles.titleHidden}>Про будівельну компанію Андезян</h1>
+      <h2 className={styles.titleAboutUs}>About us</h2>
       <ul className={styles.listAboutUs}>
         {aboutUsData.map(item => (
           <li key={item.id} className={styles.itemAboutUs}>

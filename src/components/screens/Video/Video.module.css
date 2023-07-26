@@ -12,6 +12,13 @@
   }
 }
 
+.titleHidden {
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
 .listVideo {
   padding: 40px 34px 40px 34px;
   display: flex;

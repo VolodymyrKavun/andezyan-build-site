@@ -16,15 +16,11 @@
 }
 
 .iconBackWrapper {
-  width: 38px;
-  height: 38px;
   position: relative;
   background-color: var(--btn-bg-color);
   border-radius: 50%;
 }
 
 .backToTopIcon {
-  width: 100%;
-  height: 100%;
   transform: rotate(180deg);
 }
