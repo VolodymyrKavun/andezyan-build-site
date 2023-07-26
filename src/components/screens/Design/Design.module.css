@@ -70,8 +70,7 @@
 .icon {
   width: 100%;
   height: 100%;
-  filter: invert(27%) sepia(10%) saturate(11%) hue-rotate(335deg)
-    brightness(100%) contrast(94%);
+  filter: invert(27%) sepia(10%) saturate(11%) hue-rotate(335deg) brightness(100%) contrast(94%);
 }
 
 .title {
@@ -117,7 +116,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--btn-bg-color);
+  background-color: var(--second-color);
   border: none;
   color: var(--main-color);
   font-size: 16px;

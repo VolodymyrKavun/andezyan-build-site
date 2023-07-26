@@ -17,7 +17,7 @@
 
 .iconBackWrapper {
   position: relative;
-  background-color: var(--btn-bg-color);
+  background-color: var(--second-color);
   border-radius: 50%;
 }
 

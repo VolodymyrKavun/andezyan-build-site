@@ -24,10 +24,17 @@ const Header = () => {
         <Form closeModal={closeModal} />
       </Modal>
       <header className={styles.container}>
-        <Link href="/" className={styles.logo}>
+        <Link href="/" >
+          <Image
+            className={styles.imgLogoMobile}
+            src="/logo_gold_transparent.svg"
+            alt="Logo mini"
+            width={40}
+            height={44}
+          />
           <Image
             className={styles.imgLogo}
-            src="/Andezyan_logo_mini.svg"
+            src="/logo_bg_black_small.svg"
             alt="Logo mini"
             width={88}
             height={88}

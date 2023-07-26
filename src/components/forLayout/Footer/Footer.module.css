@@ -11,8 +11,6 @@
   margin: 0;
   color: var(--main-color);
   font-size: 16px;
-  /* text-decoration: underline; */
-  /* font-weight: 600; */
 }
 
 .textNeon {
@@ -22,6 +20,7 @@
 }
 
 @keyframes neon {
+
   0%,
   18%,
   22%,
@@ -30,9 +29,9 @@
   57%,
   100% {
     text-shadow: 0 0 4px var(--main-color), 0 0 11px var(--main-color),
-      0 0 19px var(--main-color), 0 0 40px var(--btn-bg-color),
-      0 0 80px var(--btn-bg-color), 0 0 90px var(--btn-bg-color),
-      0 0 100px var(--btn-bg-color), 0 0 150px var(--btn-bg-color);
+      0 0 19px var(--main-color), 0 0 40px var(--second-color),
+      0 0 80px var(--second-color), 0 0 90px var(--second-color),
+      0 0 100px var(--second-color), 0 0 150px var(--second-color);
   }
 
   20%,

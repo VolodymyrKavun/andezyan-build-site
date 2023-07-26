@@ -155,7 +155,7 @@ const Map = () => {
                     <Marker
                         key={ind}
                         position={{ lat, lng }}
-                        icon={"/Andezyan_logo_mini.svg"}
+                        icon={"/logo_bg_black_small.svg"}
                         onClick={() => {
                             handleMarkerClick(ind, address, lat, lng, googleLink);
                         }}

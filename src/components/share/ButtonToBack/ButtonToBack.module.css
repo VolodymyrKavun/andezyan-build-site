@@ -16,6 +16,6 @@
 
 .iconBack {
     border-radius: 50%;
-    background-color: var(--btn-bg-color);
+    background-color: var(--second-color);
     transform: rotate(90deg);
 }
