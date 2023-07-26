@@ -3,6 +3,7 @@ import { KoHo } from 'next/font/google';
 import Footer from '@/components/forLayout/Footer/Footer';
 import Header from '@/components/forLayout/Header/Header';
 import BackToTop from '@/components/ui/BackToTop/BackToTop';
+import Head from 'next/head';
 
 const koHo = KoHo({
   subsets: ['latin'],
@@ -18,6 +19,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="uk">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="OoGsIEPKMjlWq8YrLV7q5T6jKIp9DAvYgspoq-mDVAw"
+        />
+      </Head>
       <body className={koHo.className}>
         <Header />
         {children}
