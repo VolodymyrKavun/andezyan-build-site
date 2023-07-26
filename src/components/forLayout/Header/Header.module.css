@@ -169,15 +169,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 16px;
   background-color: var(--second-bg-color);
 
   @media (min-width: 768px) {
     height: 100px;
   }
-}
 
-.logo {
-  margin-left: 16px;
+  @media (min-width: 1440px) {
+    padding: 0 48px;
+  }
 }
 
 .imgLogoMobile {
@@ -209,8 +210,7 @@
     z-index: 100;
     width: 100vw;
     height: 100vh;
-    /* background-color: var(--second-bg-color); */
-    background-color: red;
+    background-color: var(--second-bg-color);
     transition: left 1000ms;
     gap: 16px;
   }
@@ -218,10 +218,6 @@
   @media (min-width: 768px) {
     align-items: center;
     gap: 20px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    margin-left: 155px;
   }
 }
 
@@ -239,61 +235,58 @@
     z-index: 100;
     width: 100vw;
     height: 100vh;
-    /* background-color: var(--main-bg-color); */
-    background-color: violet;
+    background-color: var(--main-bg-color);
     transition: left 1000ms;
+    color: var(--main-color);
   }
 }
 
 .activeBurger {
-  @media (max-width: 767px) {
-    color: #fff;
-    left: 0;
-    /* border-radius: 8px; */
-  }
+  left: 0;
 }
 
 .link {
-  color: rgba(255, 255, 255, 1);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2.2px;
 
-  @media (max-width: 968px) {
-    font-size: 24px;
-    font-weight: 300;
+  @media (min-width: 768px) {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.88px;
   }
 }
 
 .linkActive {
-  color: rgba(254, 187, 18, 1);
+  color: var(--second-color);
+  border-bottom: 2px solid var(--second-color);
 }
 
 .btnOrder {
-  width: 226px;
-  height: 54px;
-  background-color: rgba(254, 187, 18, 1);
-  color: #fff;
-  border: none;
-  font-size: 16px;
-  font-weight: 500;
-  margin-right: 48px;
+  display: none;
 
-  @media (max-width: 968px) {
-    display: none;
+  @media (min-width: 1440px) {
+    display: block;
+    width: 226px;
+    height: 54px;
+    background-color: var(--second-color);
+    color: var(--main-color);
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
   }
 }
 
 .mobileBtnNav {
-  display: none;
+  display: block;
+  z-index: 100;
+  border: none;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
 
-  @media (max-width: 968px) {
-    display: block;
-    z-index: 100;
-    border: none;
-    width: 48px;
-    height: 48px;
-    background-color: transparent;
-    margin-right: 16px;
+  @media (min-width: 768px) {
+    display: none;
   }
 }
