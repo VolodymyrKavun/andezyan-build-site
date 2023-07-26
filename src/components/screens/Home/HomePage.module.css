@@ -40,14 +40,14 @@
 }
 
 .selection {
-  color: rgba(254, 187, 18, 1);
+  color: var(--second-color);
 }
 
 .btnOrder {
   width: 178px;
   height: 50px;
-  background-color: rgba(254, 187, 18, 1);
-  color: #fff;
+  background-color: var(--second-color);
+  color: var(--main-color);
   border: none;
   font-size: 16px;
   font-weight: 500;

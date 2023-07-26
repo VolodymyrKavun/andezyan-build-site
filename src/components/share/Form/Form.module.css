@@ -19,6 +19,7 @@
 
 .ellipseBlack {
   display: none;
+
   @media screen and (min-width: 768px) {
     display: block;
     width: 515px;
@@ -166,7 +167,7 @@
   display: flex;
   padding: 16px 24px;
   align-items: center;
-  background: var(--btn-bg-color);
+  background: var(--second-color);
   border: none;
 
   color: var(--main-color);
