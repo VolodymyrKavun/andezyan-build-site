@@ -3,6 +3,7 @@ import { KoHo } from 'next/font/google';
 import Footer from '@/components/forLayout/Footer/Footer';
 import Header from '@/components/forLayout/Header/Header';
 import BackToTop from '@/components/ui/BackToTop/BackToTop';
+import SocLinksButton from '@/components/share/SocLinksButton/SocLinksButton';
 
 const koHo = KoHo({
   subsets: ['latin'],
@@ -52,16 +53,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <>
-      <html lang="uk">
-        <body className={koHo.className}>
-          <Header />
-          {children}
-          <Footer />
-          <BackToTop />
-          <div id="modal"></div>
-        </body>
-      </html>
-    </>
+    <html lang="uk">
+      <body className={koHo.className}>
+        <Header />
+        {children}
+        <SocLinksButton />
+        <Footer />
+        <BackToTop />
+        <div id="modal"></div>
+      </body>
+    </html>
   );
 }

@@ -4,7 +4,7 @@ import Map from '@/components/share/GoogleMap/Map.jsx';
 
 import styles from './Contacts.module.css';
 import { contactsData } from '@/data/contacts.data';
-import { socialMaxData } from '@/data/socialMax.data';
+import { socialData } from '@/data/social.data';
 import { createArrOfNeededObjProperties } from '@/utils/createArrOfNeededObjProperties';
 
 
@@ -20,7 +20,7 @@ const Contacts = () => {
   const registrAddress = adressesArr[1].address.split(':')[0];
 
   const neededSocLinksProperties = ["viber", "telegram"];
-  const socLinksArr = createArrOfNeededObjProperties(socialMaxData, neededSocLinksProperties);
+  const socLinksArr = createArrOfNeededObjProperties(socialData, neededSocLinksProperties);
 
 
   return <section className={styles.container}>
@@ -70,7 +70,8 @@ const Contacts = () => {
       <div className={styles.socLinksWrapper}>
         {socLinksArr.map((item, index) => (
           <a key={index} href={`${item.path}`} className={styles.socContact}>
-            <svg className={`${styles.socSvg} ${styles[item.name]}`}>
+            <svg className={styles.socSvg} >
+
               <use href={item.icon} className={`${styles.socIcon} ${styles[item.name]}`}></use>
             </svg>
           </a>

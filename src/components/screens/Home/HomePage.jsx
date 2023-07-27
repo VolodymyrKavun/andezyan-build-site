@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import SLButton from '../../share/SLButton/SLButton';
 import Modal from '@/components/share/Modal/Modal';
 import Form from '@/components/share/Form/Form';
 import styles from './HomePage.module.css';
@@ -19,7 +18,7 @@ const HomePage = () => {
         <Form closeModal={closeModal} />
       </Modal>
       <div className={styles.container}>
-        <div className={styles.wrapLogo}>
+        <div className={styles.imgWrapper}>
           <Image
             className={styles.imgLogo}
             src="/logo_gold_transparent.svg"
@@ -29,12 +28,11 @@ const HomePage = () => {
           />
         </div>
         <h1 className={styles.text}>
-          Ми будуємо найкраще для <span className={styles.selection}>Вас</span>
+          Ми будуємо найкраще для <span className={styles.selection}>ВАС</span>
         </h1>
-        <button className={styles.btnOrder} onClick={() => setShowModal(true)}>
+        <button className={styles.btnRequisition} onClick={() => setShowModal(true)}>
           Залишити заявку
         </button>
-        <SLButton />
       </div>
     </>
   );
