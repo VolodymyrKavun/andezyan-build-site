@@ -3,7 +3,6 @@
   --second-bg-color: #101010;
   --main-color: #fff;
   --second-color: #febb12;
-  /* --cards-box-shadow: rgba(254, 187, 18, 0.35); */
 }
 
 html {
@@ -65,9 +64,3 @@ button {
   background: linear-gradient(to bottom, #020b11, rgba(192, 215, 244, 0.5));
   border-radius: 8px;
 }
-
-/* body {
-  background-color: #161616;
-  box-sizing: border-box;
-  margin: 0;
-} */

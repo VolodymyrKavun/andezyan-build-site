@@ -1,170 +1,3 @@
-/* .container {
-  height: 65px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(16, 16, 16, 1);
-
-  @media (min-width: 768px) {
-    height: 100px;
-  }
-}
-
-.logo {
-  margin-left: 16px;
-}
-
-.imgLogoMobile {
-  width: 40px;
-  height: 44px;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-}
-
-.imgLogo {
-  display: none;
-
-  @media (min-width: 768px) {
-    display: block;
-  }
-}
-
-.menuNav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-left: 90px;
-
-  @media (max-width: 968px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: -200%;
-    right: 0;
-    bottom: 0;
-    z-index: 100;
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    transition: left 1000ms;
-    gap: 16px;
-  }
-}
-
-.menuNav {
-  @media screen and (min-width: 1200px) {
-    margin-left: 155px;
-  }
-}
-
-.menuBurger {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-
-  @media (max-width: 968px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: -120%;
-    right: 0;
-    bottom: 0;
-    z-index: 100;
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    transition: left 1000ms;
-  }
-}
-
-.activeBurger {
-  @media (max-width: 968px) {
-    color: #fff;
-    left: 0;
-    border-radius: 8px;
-  }
-}
-
-.link {
-  color: rgba(255, 255, 255, 1);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-
-  @media (max-width: 968px) {
-    font-size: 24px;
-    font-weight: 300;
-  }
-}
-
-.linkActive {  
-  color: rgba(254, 187, 18, 1);
-}
-
-.btnOrder {
-  width: 226px;
-  height: 54px;
-  background-color: rgba(254, 187, 18, 1);
-  color: #fff;
-  border: none;
-  font-size: 16px;
-  font-weight: 500;
-  margin-right: 48px;
-
-  @media (max-width: 968px) {
-    display: none;
-  }
-}
-
-.mobileBtnNav {
-  display: none;
-
-  @media (max-width: 968px) {
-    display: block;
-    z-index: 100;
-    border: none;
-    width: 48px;
-    height: 48px;
-    background-color: transparent;
-    margin-right: 16px;
-  }
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .container {
   height: 65px;
   display: flex;
@@ -174,11 +7,13 @@
   background-color: var(--second-bg-color);
 
   @media (min-width: 768px) {
+    padding: 0 36px 0 16px;
     height: 100px;
   }
 
   @media (min-width: 1440px) {
-    padding: 0 48px;
+    /* padding: 0 48px; */
+    padding: 0 68px 0 48px;
   }
 }
 
@@ -280,7 +115,9 @@
 }
 
 .mobileBtnNav {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 100;
   border: none;
   width: 48px;

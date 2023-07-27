@@ -4,7 +4,7 @@ import Map from '@/components/share/GoogleMap/Map.jsx';
 
 import styles from './Contacts.module.css';
 import { contactsData } from '@/data/contacts.data';
-import { socialMaxData } from '@/data/socialMax.data';
+import { socialData } from '@/data/social.data';
 import { createArrOfNeededObjProperties } from '@/utils/createArrOfNeededObjProperties';
 
 
@@ -20,7 +20,7 @@ const Contacts = () => {
   const registrAddress = adressesArr[1].address.split(':')[0];
 
   const neededSocLinksProperties = ["viber", "telegram"];
-  const socLinksArr = createArrOfNeededObjProperties(socialMaxData, neededSocLinksProperties);
+  const socLinksArr = createArrOfNeededObjProperties(socialData, neededSocLinksProperties);
 
 
   return <section className={styles.container}>

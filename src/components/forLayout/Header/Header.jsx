@@ -76,7 +76,6 @@ const Header = () => {
               width={32}
               height={19}
               alt="Icon"
-              className={styles.icon}
             />
           ) : (
             <Image
@@ -84,7 +83,6 @@ const Header = () => {
               width={35}
               height={35}
               alt="Icon"
-              className={styles.icon}
             />
           )}
         </button>

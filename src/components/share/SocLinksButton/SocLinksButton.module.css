@@ -1,0 +1,178 @@
+/* .dropdown {
+  position: fixed;
+  display: flex;
+  right: 40px;
+  bottom: 60px;
+
+  @media (max-width: 968px) {
+    display: none;
+  }
+}
+
+.label {
+  cursor: pointer;
+  background: var(--second-color);
+  padding: 1rem 1rem;
+  width: 100%;
+  transition: all 0.4s;
+  display: block;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.label:hover,
+.label:focus {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.socialList a {
+  display: flex;
+
+  align-items: center;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.socialList a:hover,
+.socialList a:focus {
+  border-radius: 30px;
+  height: 65px;
+  transform: scale(1.2);
+}
+
+.socialList {
+  position: absolute;
+  top: 0;
+  left: -255px;
+  display: flex;
+  align-items: center;
+    background: var(--second-color);
+  opacity: 0;
+   min-width: 100%;
+  height: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.dropdown:hover>.socialList,
+.dropdown:focus>.socialList {
+  opacity: 1;
+  height: 65px;
+  border-radius: 30px;
+  transform: scaleX(1);
+} */
+
+
+
+
+
+
+
+
+
+
+.container {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    position: fixed;
+    display: flex;
+    left: 40px;
+    bottom: 60px;
+  }
+}
+
+.circleWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  background-color: var(--second-color);
+  transition: all 0.4s;
+}
+
+.circle {
+  width: 32px;
+  height: 32px;
+}
+
+.iconCircle {
+  fill: transparent;
+  stroke: var(--main-color);
+}
+
+.socialList {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 0 28px;
+  height: 80px;
+  background: var(--second-color);
+  border-radius: 40px;
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.container:hover .socialList,
+.container:focus .socialList {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.socSvg {
+  width: 32px;
+  height: 32px;
+}
+
+.socLink {
+  transition: all 0.2s;
+}
+
+.socLink:hover .socSvg,
+.socLink:focus .socSvg {
+  transform: scale(1.25)
+}
+
+.socLink:hover .phone,
+.socContact:focus .phone {
+  fill: green;
+}
+
+.socLink:hover .email,
+.socContact:focus .email {
+  fill: red;
+}
+
+.socLink:hover .telegram,
+.socContact:focus .telegram {
+  fill: #229ed9;
+}
+
+.socLink:hover .viber,
+.socLink:focus .viber {
+  fill: #665cac;
+  stroke: #665cac;
+}
+
+.socLink:hover .physicalAddress,
+.socLink:focus .physicalAddress {
+  fill: red;
+}
+
+.socIcon {
+  fill: transparent;
+  stroke: var(--main-color);
+}
