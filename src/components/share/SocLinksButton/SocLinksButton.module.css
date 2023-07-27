@@ -82,6 +82,7 @@
     display: flex;
     left: 40px;
     bottom: 60px;
+    border-radius: 50%;
   }
 }
 
@@ -117,7 +118,7 @@
   gap: 40px;
   padding: 0 28px;
   height: 80px;
-  background: var(--second-color);
+  background-color: var(--second-color);
   border-radius: 40px;
   overflow: hidden;
   opacity: 0;

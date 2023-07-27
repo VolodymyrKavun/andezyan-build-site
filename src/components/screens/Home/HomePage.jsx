@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import SocLinksButton from '../../share/SocLinksButton/SocLinksButton';
 import Modal from '@/components/share/Modal/Modal';
 import Form from '@/components/share/Form/Form';
 import styles from './HomePage.module.css';
@@ -34,7 +33,6 @@ const HomePage = () => {
         <button className={styles.btnRequisition} onClick={() => setShowModal(true)}>
           Залишити заявку
         </button>
-        <SocLinksButton />
       </div>
     </>
   );

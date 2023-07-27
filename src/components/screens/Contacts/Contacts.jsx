@@ -70,7 +70,8 @@ const Contacts = () => {
       <div className={styles.socLinksWrapper}>
         {socLinksArr.map((item, index) => (
           <a key={index} href={`${item.path}`} className={styles.socContact}>
-            <svg className={`${styles.socSvg} ${styles[item.name]}`}>
+            <svg className={styles.socSvg} >
+
               <use href={item.icon} className={`${styles.socIcon} ${styles[item.name]}`}></use>
             </svg>
           </a>
