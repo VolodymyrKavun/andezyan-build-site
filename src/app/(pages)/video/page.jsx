@@ -5,10 +5,9 @@ export const metadata = {
   title: 'Відео будівельної компанії Андезян',
   description:
     'Відео модульні будинки, відкатні ворота, СТО під ключ, Будівельна компанія Андезян',
-  // alternates: {
-  //   canonical: 'https://andezyan-build-site.vercel.app/video',
-  // },
-  metadataBase: new URL('https://acme.com'),
+   alternates: {
+     canonical: 'https://andezyan-build-site.vercel.app/video',
+   },
 };
 
 const VideoPage = () => {
