@@ -80,7 +80,7 @@
   @media screen and (min-width: 768px) {
     position: fixed;
     display: flex;
-    left: 40px;
+    right: 40px;
     bottom: 60px;
     border-radius: 50%;
   }
@@ -99,6 +99,11 @@
   transition: all 0.4s;
 }
 
+.circleWrapper:hover .iconCircle,
+.circleWrapper:focus .iconCircle {
+  stroke: transparent;
+}
+
 .circle {
   width: 32px;
   height: 32px;
@@ -111,26 +116,27 @@
 
 .socialList {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   gap: 40px;
-  padding: 0 28px;
-  height: 80px;
+  padding: 28px 0;
+  width: 80px;
   background-color: var(--second-color);
   border-radius: 40px;
   overflow: hidden;
   opacity: 0;
-  transform: scaleX(0);
-  transform-origin: left;
+  transform: scaleY(0);
+  transform-origin: bottom;
   transition: transform 0.5s;
 }
 
 .container:hover .socialList,
 .container:focus .socialList {
   opacity: 1;
-  transform: scaleX(1);
+  transform: scaleY(1);
 }
 
 .socSvg {
@@ -148,17 +154,17 @@
 }
 
 .socLink:hover .phone,
-.socContact:focus .phone {
+.socLink:focus .phone {
   fill: green;
 }
 
 .socLink:hover .email,
-.socContact:focus .email {
+.socLink:focus .email {
   fill: red;
 }
 
 .socLink:hover .telegram,
-.socContact:focus .telegram {
+.socLink:focus .telegram {
   fill: #229ed9;
 }
 
