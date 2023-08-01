@@ -31,11 +31,11 @@ const GallerySlider = ({ params }) => {
   return (
     <section className={styles.container}>
       <ButtonToBack onClick={() => router.back()} />
-      <div className={styles.imagesWrapper}>
+      <ul className={styles.list}>
         {dataByCategory.map((item, index) => {
           const path = createPath(params.category, item.photo);
           return (
-            <div
+            <li
               key={item.id}
               className={styles.imgContainer}
               onClick={() => setIndex(index)}
@@ -47,13 +47,14 @@ const GallerySlider = ({ params }) => {
                 width={380}
                 height={380}
               />
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
       <Slider index={index} setIndex={setIndex} array={dataForSlider} />
     </section>
   );
 };
+
 
 export default GallerySlider;

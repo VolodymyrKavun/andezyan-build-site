@@ -1,5 +1,5 @@
 .container {
-  padding: 40px 34px 40px 34px;
+  padding: 40px 34px;
   width: 100%;
   min-height: calc(100vh - 105px);
   background: url('/design/bg_image_design_min.jpg');
@@ -7,7 +7,7 @@
   background-size: cover;
 
   @media screen and (min-width: 768px) {
-    padding: 80px 34px 80px 34px;
+    padding: 80px 56px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -25,7 +25,7 @@
 .list {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
 }

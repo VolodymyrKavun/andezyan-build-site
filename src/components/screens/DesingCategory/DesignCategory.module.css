@@ -6,6 +6,10 @@
   background-position: center;
   background-size: cover;
 
+  @media screen and (min-width: 768px) {
+    padding: 40px 56px 32px;
+  }
+
   @media screen and (min-width: 1440px) {
     min-height: calc(100vh - 145px);
   }
@@ -19,12 +23,15 @@
 }
 
 .list {
-  padding: 40px 34px 40px 34px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 24px;
+
+  @media screen and (min-width: 1440px) {
+    gap: 40px;
+  }
 }
 
 .imgWrapper {
@@ -49,7 +56,7 @@
 }
 
 .img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .buttonToBack {
