@@ -8,6 +8,7 @@ import { imageGroupsData } from '@/data/imageGroups.data';
 
 const Gallery = () => {
   return <section className={styles.container}>
+    <h1 className={styles.titleHidden}>Галерея будівельної компанії Андезян</h1>
     <ul className={styles.list}>
       {imageGroupsData.map(item => (
         <li key={item.id}>
@@ -20,7 +21,7 @@ const Gallery = () => {
                 width={380}
                 height={380}
               />
-              <h1 className={styles.title}>{item.title}</h1>
+              <h2 className={styles.title}>{item.title}</h2>
             </div>
           </Link>
         </li>

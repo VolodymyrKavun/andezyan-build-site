@@ -30,6 +30,7 @@ const GallerySlider = ({ params }) => {
 
   return (
     <section className={styles.container}>
+      <h1 className={styles.titleHidden}>Галерея будівельної компанії Андезян</h1>
       <ButtonToBack onClick={() => router.back()} />
       <ul className={styles.list}>
         {dataByCategory.map((item, index) => {

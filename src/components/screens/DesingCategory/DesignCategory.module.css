@@ -1,5 +1,5 @@
 .container {
-  padding: 40px 16px 32px;
+  padding: 64px 16px 32px;
   width: 100%;
   min-height: calc(100vh - 105px);
   background: url('/design/bg_image_design_min.jpg');
@@ -7,7 +7,7 @@
   background-size: cover;
 
   @media screen and (min-width: 768px) {
-    padding: 40px 56px 32px;
+    padding: 64px 56px 32px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -57,29 +57,4 @@
 
 .img:hover {
   transform: scale(1.05);
-}
-
-.buttonToBack {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  border: none;
-}
-
-.buttonToBack:hover {
-  transform: translateX(-0.4rem);
-}
-
-.iconBackWrapper {
-  width: 38px;
-  height: 38px;
-  position: relative;
-}
-
-.iconBack {
-  border-radius: 50%;
-  background-color: var(--second-color);
-  transform: rotate(90deg);
 }

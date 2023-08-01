@@ -6,6 +6,8 @@ import { designCategory } from '@/data/designCategory.data';
 import { useRouter } from 'next/navigation';
 import { getDataByParam } from '@/utils/getDataByParam';
 import Slider from '@/components/share/Slider/Slider';
+import ButtonToBack from '@/components/share/ButtonToBack/ButtonToBack';
+
 
 const DesignCategory = ({ params }) => {
   const router = useRouter();
@@ -25,16 +27,7 @@ const DesignCategory = ({ params }) => {
         <h1 className={styles.titleHidden}>
           Проектна документація та Візуалізація
         </h1>
-        <button className={styles.buttonToBack} onClick={() => router.back()}>
-          <div className={styles.iconBackWrapper}>
-            <Image
-              src="/sprite/icon_arrow-down-circle.svg"
-              alt="Кнопка повернення"
-              fill={true}
-              className={styles.iconBack}
-            />
-          </div>
-        </button>
+        <ButtonToBack onClick={() => router.back()} />
         <ul className={styles.list}>
           {designDataByCategory.map((item, index) => (
             <li key={item.id}>
