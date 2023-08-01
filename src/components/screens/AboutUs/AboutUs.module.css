@@ -1,10 +1,10 @@
 .container {
-  padding: 40px 34px 40px 34px;
+  padding: 40px 34px;
   width: 100%;
   min-height: calc(100vh - 105px);
 
   @media screen and (min-width: 768px) {
-    padding: 80px 34px 80px 34px;
+    padding: 40px 56px 60px;
     background: linear-gradient(rgba(22, 22, 22, 0.8), rgba(22, 22, 22, 0.8)),
       url('/design/bg_image_design_min.jpg');
     background-position: center;

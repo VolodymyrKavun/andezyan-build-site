@@ -82,5 +82,11 @@
 <path d="M0.169 12.243c0 6.589 11.298 18.66 11.93 18.66v-12.693c-3.341-0-6.049-2.708-6.049-6.049s2.708-6.049 6.049-6.049v-5.8c-6.589 0-11.93 5.341-11.93 11.93z"></path>
 </symbol>
 
+<symbol id="icon_arrow_left_circle" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 29.333c7.364 0 13.333-5.97 13.333-13.333s-5.97-13.333-13.333-13.333c-7.364 0-13.333 5.97-13.333 13.333s5.97 13.333 13.333 13.333z"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 10.667l-5.333 5.333 5.333 5.333"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M21.333 16h-10.667"></path>
+</symbol>
+
 </defs>
 </svg>

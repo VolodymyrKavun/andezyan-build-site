@@ -1,11 +1,13 @@
 .containerVideo {
-  padding: 40px 34px 40px 34px;
+  padding: 40px 34px;
   width: 100%;
   min-height: calc(100vh - 105px);
-  /* background: linear-gradient(rgba(23, 23, 23, 0.8), rgba(23, 23, 23, 0.8)),
-    url('/gallery-bg.webp'); */
   background-position: 40% 70%;
   background-size: cover;
+
+  @media screen and (min-width: 768px) {
+    padding: 40px 56px;
+  }
 
   @media screen and (min-width: 1440px) {
     min-height: calc(100vh - 145px);
@@ -20,12 +22,15 @@
 }
 
 .listVideo {
-  padding: 40px 34px 40px 34px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 24px;
+
+  @media screen and (min-width: 1440px) {
+    gap: 40px;
+  }
 }
 
 .itemVideo {
