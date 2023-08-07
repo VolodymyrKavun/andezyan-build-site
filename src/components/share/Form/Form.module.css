@@ -63,6 +63,19 @@
   }
 }
 
+.wrapperYoungManHappy {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 170px;
+  height: 150px;
+
+  @media screen and (min-width: 768px) {
+    width: 320px;
+    height: 275px;
+  }
+}
+
 .iconYoungMan {
   width: 100%;
   height: 100%;
@@ -200,4 +213,47 @@
 
 .submitBtnDis {
   background-color: #9a9a9a;
+}
+
+.helloWrap {
+  position: relative;
+
+  width: 308px;
+  @media screen and (min-width: 768px) {
+    z-index: 1;
+    width: 214px;
+    margin-left: 270px;
+  }
+}
+
+.helloText {
+  font-size: 18px;
+  width: 250px;
+  @media screen and (min-width: 768px) {
+    color: #000;
+    width: 204px;
+  }
+}
+
+.helloTitle {
+  font-size: 32px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    color: #000;
+  }
+}
+
+.wrapLine {
+  position: absolute;
+  top: -120px;
+  right: 20px;
+  width: 250px;
+  height: 350px;
+  @media screen and (min-width: 768px) {
+    top: -80px;
+    right: -70px;
+    width: 220px;
+    height: 320px;
+  }
 }
