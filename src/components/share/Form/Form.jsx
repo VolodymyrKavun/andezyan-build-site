@@ -12,13 +12,14 @@ const Form = ({ closeModal }) => {
   const [errorUserName, setErrorUserName] = useState('Заповніть це поле');
   const [errorPhone, setErrorPhone] = useState('Заповніть це поле');
 
-  const [validForm, setvalidForm] = useState(false);
+  const [validForm, setValidForm] = useState(false);
+  const [submit, setSubmit] = useState(false);
 
   useEffect(() => {
     if (errorUserName || errorPhone) {
-      setvalidForm(false);
+      setValidForm(false);
     } else {
-      setvalidForm(true);
+      setValidForm(true);
     }
   }, [errorUserName, errorPhone]);
 
@@ -86,11 +87,13 @@ const Form = ({ closeModal }) => {
       name: userName,
       tel: phone,
     };
-
+    setSubmit(true);
     console.log('data:', data);
 
-    closeModal();
-    reset();
+    setTimeout(() => {
+      closeModal();
+      reset();
+    }, 3000);
   };
 
   const reset = () => {
@@ -100,20 +103,33 @@ const Form = ({ closeModal }) => {
     setDirtyPhone(false);
     setErrorUserName('Заповніть це поле');
     setErrorPhone('Заповніть це поле');
+    setSubmit(false);
   };
 
   return (
     <>
       <section className={styles.container}>
         <div className={styles.ellipseBlack}></div>
-        <div className={styles.wrapperYoungMan}>
-          <Image
-            src="/sprite/icon_young_man.svg"
-            fill={true}
-            alt="icon_young_man"
-            className={styles.iconYoungMan}
-          />
-        </div>
+        {!submit ? (
+          <div className={styles.wrapperYoungMan}>
+            <Image
+              src="/sprite/icon_young_man.svg"
+              fill={true}
+              alt="icon_young_man"
+              className={styles.iconYoungMan}
+            />
+          </div>
+        ) : (
+          <div className={styles.wrapperYoungManHappy}>
+            <Image
+              src="/sprite/happy_smiling_young_man.svg"
+              fill={true}
+              alt="icon_young_man"
+              className={styles.iconYoungMan}
+            />
+          </div>
+        )}
+
         <div className={styles.wrapperBuble}>
           <Image
             src="/sprite/icon_yellow_buble.svg"
@@ -131,63 +147,80 @@ const Form = ({ closeModal }) => {
           />
         </button>
         <div className={styles.ellipsePink}></div>
-        <form className={styles.form} onSubmit={formSubmit}>
-          <div className={styles.wrapError}>
-            {dirtyUserName && errorUserName && (
-              <div className={styles.error}>{errorUserName}</div>
-            )}
-            <label htmlFor="">
-              <p className={styles.textInput}>Ім’я</p>
-              <input
-                type="text"
-                name="name"
-                value={userName}
-                placeholder="Введіть ім’я"
-                autoComplete="off"
-                className={
-                  errorUserName && dirtyUserName
-                    ? styles.input + ' ' + styles.inputError
-                    : styles.input
-                }
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-            </label>
-          </div>
+        {!submit ? (
+          <form className={styles.form} onSubmit={formSubmit}>
+            <div className={styles.wrapError}>
+              {dirtyUserName && errorUserName && (
+                <div className={styles.error}>{errorUserName}</div>
+              )}
+              <label htmlFor="">
+                <p className={styles.textInput}>Ім’я</p>
+                <input
+                  type="text"
+                  name="name"
+                  value={userName}
+                  placeholder="Введіть ім’я"
+                  autoComplete="off"
+                  className={
+                    errorUserName && dirtyUserName
+                      ? styles.input + ' ' + styles.inputError
+                      : styles.input
+                  }
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+              </label>
+            </div>
 
-          <div className={styles.wrapError}>
-            {dirtyPhone && errorPhone && (
-              <div className={styles.error}>{errorPhone}</div>
-            )}
-            <label htmlFor="">
-              <p className={styles.textInput}>Номер</p>
-              <input
-                type="tel"
-                name="phone"
-                value={phone}
-                placeholder="Введіть номер телефону"
-                autoComplete="off"
-                className={
-                  errorPhone && dirtyPhone
-                    ? styles.input + ' ' + styles.inputError
-                    : styles.input
-                }
-                onChange={handleChange}
-                onBlur={handleBlur}
+            <div className={styles.wrapError}>
+              {dirtyPhone && errorPhone && (
+                <div className={styles.error}>{errorPhone}</div>
+              )}
+              <label htmlFor="">
+                <p className={styles.textInput}>Номер</p>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={phone}
+                  placeholder="Введіть номер телефону"
+                  autoComplete="off"
+                  className={
+                    errorPhone && dirtyPhone
+                      ? styles.input + ' ' + styles.inputError
+                      : styles.input
+                  }
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+              </label>
+            </div>
+            <button
+              className={
+                !validForm
+                  ? styles.submitBtn + ' ' + styles.submitBtnDis
+                  : styles.submitBtn
+              }
+              disabled={!validForm}
+            >
+              Залишити заявку
+            </button>
+          </form>
+        ) : (
+          <div className={styles.helloWrap}>
+            <h2 className={styles.helloTitle}>Вітаємо</h2>
+            <p className={styles.helloText}>
+              Вашу заявку відправлено до менеджера
+            </p>
+            <div className={styles.wrapLine}>
+              <Image
+                src="/sprite/icon_long_arrow.svg"
+                fill={true}
+                alt="icon_line"
+                className={styles.iconLine}
               />
-            </label>
+            </div>
           </div>
-          <button
-            className={
-              !validForm
-                ? styles.submitBtn + ' ' + styles.submitBtnDis
-                : styles.submitBtn
-            }
-            disabled={!validForm}
-          >
-            Залишити заявку
-          </button>
-        </form>
+        )}
       </section>
     </>
   );
