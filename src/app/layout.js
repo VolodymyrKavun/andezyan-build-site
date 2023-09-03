@@ -19,7 +19,7 @@ export const metadata = {
     canonical: 'https://andezyan-build-site.vercel.app/',
   },
   icons: {
-    icon: '/public/logo_gold_transparent.svg',
+    icon: '/favicons/favicon.ico',
   },
   openGraph: {
     title: 'Будівельна компанія Андезян',
@@ -29,7 +29,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/public/Andezyan_logo_big.svg',
+        url: '/favicons/favicon.ico',
         type: 'image/svg',
         width: 1200,
         height: 630,
@@ -47,13 +47,33 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'OoGsIEPKMjlWq8YrLV7q5T6jKIp9DAvYgspoq-mDVAw',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SC,
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="uk">
+      <head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicons/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicons/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicons/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body className={koHo.className}>
         <Header />
         {children}
