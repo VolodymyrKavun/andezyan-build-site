@@ -20,7 +20,23 @@ export const metadata = {
   },
   icons: {
     icon: '/favicons/favicon.ico',
+    shortcut: '/favicons/favicon.ico',
+    apple: '/favicons/apple-touch-icon.png',
+    // other: {
+    //   rel: 'apple-touch-icon-precomposed',
+    //   url: '/favicons/apple-touch-icon.png',
+    // },
+    // android: [
+    //   { url: '/favicons/android-chrome-192x192.png' },
+    //   {
+    //     url: '/favicons/android-chrome-192x192.png',
+    //     sizes: '192x192',
+    //     type: 'image/png',
+    //   },
+    // ],
   },
+  themeColor: '#ffffff',
+  manifest: `${process.env.NEXT_PUBLIC_MAIN_URL}favicons/site.webmanifest`,
   openGraph: {
     title: 'Будівельна компанія Андезян',
     url: 'https://andezyan-build-site.vercel.app/',
@@ -59,6 +75,7 @@ export default function RootLayout({ children }) {
           rel="apple-touch-icon"
           sizes="180x180"
           href="/favicons/apple-touch-icon.png"
+          type="image/png"
         />
         <link
           rel="icon"
@@ -72,7 +89,8 @@ export default function RootLayout({ children }) {
           sizes="16x16"
           href="/favicons/favicon-16x16.png"
         />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
       </head>
       <body className={koHo.className}>
         <Header />
