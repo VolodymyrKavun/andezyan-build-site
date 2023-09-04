@@ -19,21 +19,27 @@ export const metadata = {
     canonical: 'https://andezyan-build-site.vercel.app/',
   },
   icons: {
-    icon: '/favicons/favicon.ico',
-    shortcut: '/favicons/favicon.ico',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
     apple: '/favicons/apple-touch-icon.png',
-    // other: {
-    //   rel: 'apple-touch-icon-precomposed',
-    //   url: '/favicons/apple-touch-icon.png',
-    // },
-    // android: [
-    //   { url: '/favicons/android-chrome-192x192.png' },
-    //   {
-    //     url: '/favicons/android-chrome-192x192.png',
-    //     sizes: '192x192',
-    //     type: 'image/png',
-    //   },
-    // ],
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/favicons/apple-touch-icon.png',
+    },
+    android: [
+      { url: '/favicons/android-chrome-192x192.png' },
+      {
+        url: '/favicons/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      { url: '/favicons/android-chrome-512x512.png' },
+      {
+        url: '/favicons/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
   },
   themeColor: '#ffffff',
   manifest: `${process.env.NEXT_PUBLIC_MAIN_URL}favicons/site.webmanifest`,
