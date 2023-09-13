@@ -4,6 +4,7 @@ import Footer from '@/components/forLayout/Footer/Footer';
 import Header from '@/components/forLayout/Header/Header';
 import BackToTop from '@/components/ui/BackToTop/BackToTop';
 import SocLinksButton from '@/components/share/SocLinksButton/SocLinksButton';
+import Head from 'next/head';
 
 const koHo = KoHo({
   subsets: ['latin'],
@@ -19,8 +20,8 @@ export const metadata = {
     canonical: 'https://andezyan-build-site.vercel.app/',
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
+    icon: '/favicons/favicon.ico',
+    shortcut: '/favicons/favicon.ico',
     apple: '/favicons/apple-touch-icon.png',
     other: {
       rel: 'apple-touch-icon-precomposed',
@@ -42,13 +43,14 @@ export const metadata = {
     ],
   },
   themeColor: '#ffffff',
-  manifest: `${process.env.NEXT_PUBLIC_MAIN_URL}favicons/site.webmanifest`,
+  manifest: `${process.env.NEXT_PUBLIC_MAIN_URL}/site.webmanifest`,
   openGraph: {
     title: 'Будівельна компанія Андезян',
     url: 'https://andezyan-build-site.vercel.app/',
     description:
       'Ангар, склад, навіс, металоконструкції, реконструкція, Проектування будівельних споруд, Моделювання, Візуалізація та Розробка документації',
     type: 'website',
+    siteName: 'Будівельна компанія Андезян',
     images: [
       {
         url: '/favicons/favicon.ico',
@@ -76,28 +78,35 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="uk">
-      <head>
-        <link
+      <Head>
+        {/* <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/favicons/apple-touch-icon.png"
           type="image/png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicons/favicon-32x32.png"
-        />
-        <link
+        /> */}
+        {/* <link
           rel="icon"
           type="image/png"
           sizes="16x16"
           href="/favicons/favicon-16x16.png"
-        />
+        /> */}
+        {/* <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicons/favicon-32x32.png"
+        /> */}
+        {/* <link
+          rel="icon"
+          type="image/png"
+          sizes="48x48"
+          href="/favicons/favicon-48x48.png"
+        /> */}
+
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
-      </head>
+      </Head>
       <body className={koHo.className}>
         <Header />
         {children}
