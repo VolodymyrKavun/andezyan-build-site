@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { navigationData } from '@/data/navigation.data';
-import Modal from '@/components/share/Modal/Modal';
+import ModalTransition from '@/components/share/ModalTransition/ModalTransition';
 import Form from '@/components/share/Form/Form';
 
 import styles from './Header.module.css';
@@ -20,11 +20,11 @@ const Header = () => {
 
   return (
     <>
-      <Modal active={showModal} closeModal={closeModal}>
+      <ModalTransition active={showModal} closeModal={closeModal}>
         <Form closeModal={closeModal} />
-      </Modal>
+      </ModalTransition>
       <header className={styles.container}>
-        <Link href="/" >
+        <Link href="/">
           <Image
             className={styles.imgLogoMobile}
             src="/logo_gold_transparent.svg"
