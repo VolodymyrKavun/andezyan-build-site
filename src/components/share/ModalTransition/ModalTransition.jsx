@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Transition } from 'react-transition-group';
-import Portal from './Portal';
+// import Portal from './Portal';
 import './ModalTransition.css';
 
 const ModalTransition = ({ active, closeModal, children }) => {
@@ -19,7 +19,7 @@ const ModalTransition = ({ active, closeModal, children }) => {
   };
 
   return (
-    <Portal>
+    <>
       <Transition in={active} timeout={500} unmountOnExit={true}>
         {state => (
           <div
@@ -30,7 +30,7 @@ const ModalTransition = ({ active, closeModal, children }) => {
           </div>
         )}
       </Transition>
-    </Portal>
+    </>
   );
 };
 
