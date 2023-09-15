@@ -1,22 +1,21 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import Modal from '@/components/share/Modal/Modal';
+import ModalTransition from '@/components/share/ModalTransition/ModalTransition';
 import Form from '@/components/share/Form/Form';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
   return (
     <>
-      <Modal active={showModal} closeModal={closeModal}>
-        <Form closeModal={closeModal} />
-      </Modal>
+      <ModalTransition
+        active={showModal}
+        closeModal={() => setShowModal(false)}
+      >
+        <Form closeModal={() => setShowModal(false)} />
+      </ModalTransition>
       <div className={styles.container}>
         <div className={styles.imgWrapper}>
           <Image
@@ -30,7 +29,10 @@ const HomePage = () => {
         <h1 className={styles.text}>
           Ми будуємо найкраще для <span className={styles.selection}>ВАС</span>
         </h1>
-        <button className={styles.btnRequisition} onClick={() => setShowModal(true)}>
+        <button
+          className={styles.btnRequisition}
+          onClick={() => setShowModal(true)}
+        >
           Залишити заявку
         </button>
       </div>
