@@ -20,8 +20,8 @@ export const metadata = {
     canonical: 'https://andezyan-build-site.vercel.app/',
   },
   icons: {
-    icon: '/favicons/favicon.ico',
-    shortcut: '/favicons/favicon.ico',
+    icon: 'favicon.ico',
+    shortcut: 'favicon.ico',
     apple: '/favicons/apple-touch-icon.png',
     other: {
       rel: 'apple-touch-icon-precomposed',
@@ -53,7 +53,7 @@ export const metadata = {
     siteName: 'Будівельна компанія Андезян',
     images: [
       {
-        url: '/favicons/favicon.ico',
+        url: 'favicon.ico',
         type: 'image/svg',
         width: 1200,
         height: 630,
