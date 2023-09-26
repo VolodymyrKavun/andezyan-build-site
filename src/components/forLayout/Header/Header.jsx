@@ -4,10 +4,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { navigationData } from '@/data/navigation.data';
-import ModalTransition from '@/components/share/ModalTransition/ModalTransition';
-import Form from '@/components/share/Form/Form';
+// import ModalTransition from '@/components/share/ModalTransition/ModalTransition';
+// import Form from '@/components/share/Form/Form';
 
 import styles from './Header.module.css';
+import dynamic from 'next/dynamic';
+
+const DynamicModalTransition = dynamic(() =>
+  import('@/components/share/ModalTransition/ModalTransition')
+);
+const DynamicForm = dynamic(() => import('@/components/share/Form/Form'));
 
 const Header = () => {
   const pathname = usePathname();
@@ -20,9 +26,12 @@ const Header = () => {
 
   return (
     <>
-      <ModalTransition active={showModal} closeModal={closeModal}>
-        <Form closeModal={closeModal} />
-      </ModalTransition>
+      {/* <ModalTransition active={showModal} closeModal={closeModal}> */}
+      <DynamicModalTransition active={showModal} closeModal={closeModal}>
+        {/* <Form closeModal={closeModal} /> */}
+        <DynamicForm closeModal={closeModal} />
+        {/* </ModalTransition> */}
+      </DynamicModalTransition>
       <header className={styles.container}>
         <Link href="/">
           <Image

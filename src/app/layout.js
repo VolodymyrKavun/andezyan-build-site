@@ -1,10 +1,24 @@
 import './globals.css';
 import { KoHo } from 'next/font/google';
-import Footer from '@/components/forLayout/Footer/Footer';
-import Header from '@/components/forLayout/Header/Header';
-import BackToTop from '@/components/ui/BackToTop/BackToTop';
-import SocLinksButton from '@/components/share/SocLinksButton/SocLinksButton';
+// import Footer from '@/components/forLayout/Footer/Footer';
+// import Header from '@/components/forLayout/Header/Header';
+// import BackToTop from '@/components/ui/BackToTop/BackToTop';
+// import SocLinksButton from '@/components/share/SocLinksButton/SocLinksButton';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
+
+const DynamicHeader = dynamic(() =>
+  import('@/components/forLayout/Header/Header')
+);
+const DynamicSocLinksButton = dynamic(() =>
+  import('@/components/share/SocLinksButton/SocLinksButton')
+);
+const DynamicFooter = dynamic(() =>
+  import('@/components/forLayout/Footer/Footer')
+);
+const DynamicBackToTop = dynamic(() =>
+  import('@/components/ui/BackToTop/BackToTop')
+);
 
 const koHo = KoHo({
   subsets: ['latin'],
@@ -104,15 +118,21 @@ export default function RootLayout({ children }) {
           href="/favicons/favicon-48x48.png"
         />
 
+        <link rel="preload" href="/hero-bg.webp" as="image" />
+
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
       </Head>
       <body className={koHo.className}>
-        <Header />
+        {/* <Header /> */}
+        <DynamicHeader />
         {children}
-        <SocLinksButton />
-        <Footer />
-        <BackToTop />
+        {/* <SocLinksButton /> */}
+        <DynamicSocLinksButton />
+        {/* <Footer /> */}
+        <DynamicFooter />
+        {/* <BackToTop /> */}
+        <DynamicBackToTop />
         <div id="modal"></div>
       </body>
     </html>

@@ -1,21 +1,33 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import ModalTransition from '@/components/share/ModalTransition/ModalTransition';
-import Form from '@/components/share/Form/Form';
+// import ModalTransition from '@/components/share/ModalTransition/ModalTransition';
+// import Form from '@/components/share/Form/Form';
 import styles from './HomePage.module.css';
+import dynamic from 'next/dynamic';
+
+const DynamicModalTransition = dynamic(() =>
+  import('@/components/share/ModalTransition/ModalTransition')
+);
+const DynamicForm = dynamic(() => import('@/components/share/Form/Form'));
 
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <ModalTransition
+      {/* <ModalTransition
+        active={showModal}
+        closeModal={() => setShowModal(false)}
+      > */}
+      <DynamicModalTransition
         active={showModal}
         closeModal={() => setShowModal(false)}
       >
-        <Form closeModal={() => setShowModal(false)} />
-      </ModalTransition>
+        {/* <Form closeModal={() => setShowModal(false)} /> */}
+        <DynamicForm closeModal={() => setShowModal(false)} />
+        {/* </ModalTransition> */}
+      </DynamicModalTransition>
       <div className={styles.container}>
         <div className={styles.imgWrapper}>
           <Image
