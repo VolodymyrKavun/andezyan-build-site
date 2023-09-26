@@ -5,9 +5,11 @@ import styles from './DesignCategory.module.css';
 import { designCategory } from '@/data/designCategory.data';
 import { useRouter } from 'next/navigation';
 import { getDataByParam } from '@/utils/getDataByParam';
-import Slider from '@/components/share/Slider/Slider';
+// import Slider from '@/components/share/Slider/Slider';
 import ButtonToBack from '@/components/share/ButtonToBack/ButtonToBack';
+import dynamic from 'next/dynamic';
 
+const DynamicSlider = dynamic(() => import('@/components/share/Slider/Slider'));
 
 const DesignCategory = ({ params }) => {
   const router = useRouter();
@@ -45,7 +47,12 @@ const DesignCategory = ({ params }) => {
             </li>
           ))}
         </ul>
-        <Slider index={index} setIndex={setIndex} array={designDataForSlider} />
+        {/* <Slider index={index} setIndex={setIndex} array={designDataForSlider} /> */}
+        <DynamicSlider
+          index={index}
+          setIndex={setIndex}
+          array={designDataForSlider}
+        />
       </section>
     </>
   );

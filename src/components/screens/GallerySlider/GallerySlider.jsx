@@ -3,12 +3,14 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import styles from './GallerySlider.module.css';
-import Slider from '@/components/share/Slider/Slider';
+// import Slider from '@/components/share/Slider/Slider';
 import ButtonToBack from '@/components/share/ButtonToBack/ButtonToBack';
 import { imageGallerySliderData } from '@/data/imageGallerySlider.data';
 import { createPath } from '@/utils/createPath';
 import { getDataByParam } from '@/utils/getDataByParam';
+import dynamic from 'next/dynamic';
 
+const DynamicSlider = dynamic(() => import('@/components/share/Slider/Slider'));
 
 const GallerySlider = ({ params }) => {
   // для кнопки "ButtonToBack"
@@ -30,7 +32,9 @@ const GallerySlider = ({ params }) => {
 
   return (
     <section className={styles.container}>
-      <h1 className={styles.titleHidden}>Галерея будівельної компанії Андезян</h1>
+      <h1 className={styles.titleHidden}>
+        Галерея будівельної компанії Андезян
+      </h1>
       <ButtonToBack onClick={() => router.back()} />
       <ul className={styles.list}>
         {dataByCategory.map((item, index) => {
@@ -52,10 +56,10 @@ const GallerySlider = ({ params }) => {
           );
         })}
       </ul>
-      <Slider index={index} setIndex={setIndex} array={dataForSlider} />
+      {/* <Slider index={index} setIndex={setIndex} array={dataForSlider} /> */}
+      <DynamicSlider index={index} setIndex={setIndex} array={dataForSlider} />
     </section>
   );
 };
-
 
 export default GallerySlider;
