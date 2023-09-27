@@ -34,15 +34,12 @@ export const metadata = {
     canonical: 'https://andezyan-build-site.vercel.app/',
   },
   icons: {
-    icon: [
-      { url: 'favicon.ico' },
-      new URL('favicon.ico', 'https://andezyan-build-site.vercel.app/'),
-    ],
+    icon: [{ url: 'favicon.ico' }],
     shortcut: ['favicon.ico'],
     apple: [
-      { url: '/favicons/apple-touch-icon.png' },
+      { url: '/apple-touch-icon.png' },
       {
-        url: '/favicons/apple-touch-icon.png',
+        url: '/apple-touch-icon.png',
         sizes: '180x180',
         type: 'image/png',
       },
@@ -50,7 +47,7 @@ export const metadata = {
     other: [
       {
         rel: 'apple-touch-icon-precomposed',
-        url: '/favicons/apple-touch-icon.png',
+        url: '/apple-touch-icon.png',
       },
     ],
     android: [
@@ -95,11 +92,6 @@ export const metadata = {
     ],
     locale: 'en_GB',
     type: 'website',
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
   },
   author: 'Будівельна компанія Андезян',
   robots: {
