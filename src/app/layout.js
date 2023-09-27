@@ -34,13 +34,25 @@ export const metadata = {
     canonical: 'https://andezyan-build-site.vercel.app/',
   },
   icons: {
-    icon: 'favicon.ico',
-    shortcut: 'favicon.ico',
-    apple: '/favicons/apple-touch-icon.png',
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: '/favicons/apple-touch-icon.png',
-    },
+    icon: [
+      { url: 'favicon.ico' },
+      new URL('favicon.ico', 'https://andezyan-build-site.vercel.app/'),
+    ],
+    shortcut: ['favicon.ico'],
+    apple: [
+      { url: '/favicons/apple-touch-icon.png' },
+      {
+        url: '/favicons/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+    other: [
+      {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/favicons/apple-touch-icon.png',
+      },
+    ],
     android: [
       { url: '/favicons/android-chrome-192x192.png' },
       {
@@ -56,8 +68,8 @@ export const metadata = {
       },
     ],
   },
-  themeColor: '#ffffff',
-  manifest: `${process.env.NEXT_PUBLIC_MAIN_URL}/site.webmanifest`,
+  themeColor: '#161616',
+  manifest: `${process.env.NEXT_PUBLIC_MAIN_URL}site.webmanifest`,
   openGraph: {
     title: 'Будівельна компанія Андезян',
     url: 'https://andezyan-build-site.vercel.app/',
@@ -69,12 +81,27 @@ export const metadata = {
       {
         url: 'favicon.ico',
         type: 'image/svg',
+        width: 800,
+        height: 600,
+        alt: 'Андезян лого',
+      },
+      {
+        url: 'favicon.ico',
+        type: 'image/svg',
         width: 1200,
         height: 630,
         alt: 'Андезян лого',
       },
     ],
+    locale: 'en_GB',
+    type: 'website',
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  author: 'Будівельна компанія Андезян',
   robots: {
     index: true,
     follow: true,
@@ -93,7 +120,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="uk">
       <Head>
-        <link
+        {/* <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/favicons/apple-touch-icon.png"
@@ -116,11 +143,12 @@ export default function RootLayout({ children }) {
           type="image/png"
           sizes="48x48"
           href="/favicons/favicon-48x48.png"
-        />
+        /> */}
 
         <link rel="preload" href="/hero-bg.webp" as="image" />
 
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+
         <meta name="msapplication-TileColor" content="#da532c" />
       </Head>
       <body className={koHo.className}>
