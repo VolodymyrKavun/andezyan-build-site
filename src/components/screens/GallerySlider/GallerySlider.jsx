@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { lazy, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import styles from './GallerySlider.module.css';
@@ -45,13 +45,21 @@ const GallerySlider = ({ params }) => {
               className={styles.imgContainer}
               onClick={() => setIndex(index)}
             >
-              <Image
-                className={styles.img}
-                src={path}
-                alt={item.title}
-                width={380}
-                height={380}
-              />
+              <div className={styles.imgWrapper}>
+                <Image
+                  className={styles.img}
+                  src={path}
+                  alt={item.title}
+                  // width={380}
+                  // height={380}
+                  fill={true}
+                  loading="lazy"
+                  sizes="(min-width: 420px ) 50vw,
+                (min-width: 768px) 33vw,
+                (min-width: 976px) 25vw,
+                100vw"
+                />
+              </div>
             </li>
           );
         })}

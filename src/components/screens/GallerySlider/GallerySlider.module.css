@@ -46,6 +46,12 @@
   }
 }
 
+.imgWrapper {
+  position: relative;
+  height: 380px;
+  width: 380px;
+}
+
 .img {
   object-fit: cover;
 }

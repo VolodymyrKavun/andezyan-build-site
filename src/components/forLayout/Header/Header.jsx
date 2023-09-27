@@ -40,6 +40,8 @@ const Header = () => {
             alt="Logo mini"
             width={40}
             height={44}
+            placeholder="blur"
+            blurDataURL="/logo_gold_transparent.svg"
           />
           <Image
             className={styles.imgLogo}
@@ -47,6 +49,8 @@ const Header = () => {
             alt="Logo mini"
             width={88}
             height={88}
+            placeholder="blur"
+            blurDataURL="/logo_bg_black_small.svg"
           />
         </Link>
 
@@ -85,6 +89,8 @@ const Header = () => {
               width={32}
               height={19}
               alt="Icon"
+              placeholder="blur"
+              blurDataURL="/sprite/icon_burger.svg"
             />
           ) : (
             <Image
@@ -92,6 +98,8 @@ const Header = () => {
               width={35}
               height={35}
               alt="Icon"
+              placeholder="blur"
+              blurDataURL="/sprite/icon_close_white.svg"
             />
           )}
         </button>

@@ -36,6 +36,8 @@ const HomePage = () => {
             alt="Logo big"
             width={172}
             height={189}
+            placeholder="blur"
+            blurDataURL="/logo_gold_transparent.svg"
           />
         </div>
         <h1 className={styles.text}>
