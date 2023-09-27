@@ -89,8 +89,6 @@ const Header = () => {
               width={32}
               height={19}
               alt="Icon"
-              placeholder="blur"
-              blurDataURL="/sprite/icon_burger.svg"
             />
           ) : (
             <Image
@@ -98,8 +96,6 @@ const Header = () => {
               width={35}
               height={35}
               alt="Icon"
-              placeholder="blur"
-              blurDataURL="/sprite/icon_close_white.svg"
             />
           )}
         </button>
