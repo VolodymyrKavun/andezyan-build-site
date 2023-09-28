@@ -26,6 +26,7 @@ const koHo = KoHo({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://andezyan-build-site.vercel.app/'),
   title: 'Будівельна компанія Андезян',
   description:
     'Ангар, склад, навіс, металоконструкції, реконструкція, Проектування будівельних споруд, Моделювання, Візуалізація та Розробка документації',
@@ -78,6 +79,13 @@ export const metadata = {
       {
         url: '/favicon.ico',
         type: 'image/svg',
+        width: 400,
+        height: 300,
+        alt: 'Андезян лого',
+      },
+      {
+        url: '/favicon.ico',
+        type: 'image/svg',
         width: 800,
         height: 600,
         alt: 'Андезян лого',
@@ -106,62 +114,28 @@ export const metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SC,
   },
+  generator: 'Будівельна компанія Андезян',
+  applicationName: 'Будівельна компанія Андезян',
+  referrer: 'origin-when-cross-origin',
+  keywords: [
+    'Ангар',
+    'Склад',
+    'Реконструкція',
+    'Будівельна компанія Андезян',
+    'Будівництво ангарів',
+  ],
+  authors: [
+    { name: 'Андезян' },
+    { name: 'Андезян', url: 'https://andezyan-build-site.vercel.app/' },
+  ],
+  creator: 'Андезян',
+  publisher: 'Андезян',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="uk">
       <Head>
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link
-          rel="icon"
-          href="/logo_gold_transparent.svg"
-          type="image/svg+xml"
-        />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-        {/* HTML Meta Tags */}
-        <meta
-          name="description"
-          content="Новий опис Андезяна, який стоїть в Хеді"
-        />
-
-        {/* Facebook Meta Tags  */}
-        <meta
-          property="og:url"
-          content="https://andezyan-build-site.vercel.app/"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Будівельна компанія Андезян" />
-        <meta
-          property="og:description"
-          content="Ангар, склад, навіс, металоконструкції, реконструкція, Проектування будівельних споруд, Моделювання, Візуалізація та Розробка документації"
-        />
-        <meta
-          property="og:image"
-          content="https://andezyan-build-site-j3dz03vav-volodymyrkavun.vercel.app/favicon.ico"
-        />
-
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:domain"
-          content="andezyan-build-site.vercel.app"
-        />
-        <meta
-          property="twitter:url"
-          content="https://andezyan-build-site.vercel.app/"
-        />
-        <meta name="twitter:title" content="Будівельна компанія Андезян" />
-        <meta
-          name="twitter:description"
-          content="Ангар, склад, навіс, металоконструкції, реконструкція, Проектування будівельних споруд, Моделювання, Візуалізація та Розробка документації"
-        />
-        <meta
-          name="twitter:image"
-          content="https://andezyan-build-site-j3dz03vav-volodymyrkavun.vercel.app/favicon.ico"
-        />
-
         {/* <link
           rel="icon"
           type="image/png"
