@@ -112,36 +112,84 @@ export default function RootLayout({ children }) {
   return (
     <html lang="uk">
       <Head>
-        {/* <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicons/apple-touch-icon.png"
-          type="image/png"
-        />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link
+          rel="icon"
+          href="/logo_gold_transparent.svg"
+          type="image/svg+xml"
+        />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+        {/* HTML Meta Tags */}
+        <meta
+          name="description"
+          content="Новий опис Андезяна, який стоїть в Хеді"
+        />
+
+        {/* Facebook Meta Tags  */}
+        <meta
+          property="og:url"
+          content="https://andezyan-build-site.vercel.app/"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Будівельна компанія Андезян" />
+        <meta
+          property="og:description"
+          content="Ангар, склад, навіс, металоконструкції, реконструкція, Проектування будівельних споруд, Моделювання, Візуалізація та Розробка документації"
+        />
+        <meta
+          property="og:image"
+          content="https://andezyan-build-site-j3dz03vav-volodymyrkavun.vercel.app/favicon.ico"
+        />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:domain"
+          content="andezyan-build-site.vercel.app"
+        />
+        <meta
+          property="twitter:url"
+          content="https://andezyan-build-site.vercel.app/"
+        />
+        <meta name="twitter:title" content="Будівельна компанія Андезян" />
+        <meta
+          name="twitter:description"
+          content="Ангар, склад, навіс, металоконструкції, реконструкція, Проектування будівельних споруд, Моделювання, Візуалізація та Розробка документації"
+        />
+        <meta
+          name="twitter:image"
+          content="https://andezyan-build-site-j3dz03vav-volodymyrkavun.vercel.app/favicon.ico"
+        />
+
+        {/* <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicons/favicon-16x16.png"
+          href="/favicon-16x16.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicons/favicon-32x32.png"
+          href="/favicon-32x32.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="48x48"
-          href="/favicons/favicon-48x48.png"
+          href="/favicon-48x48.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+          type="image/png"
         /> */}
 
         <link rel="preload" href="/hero-bg.webp" as="image" />
 
         <link rel="mask-icon" href="/favicon.ico" color="#161616" />
-
-        <meta name="msapplication-TileColor" content="#161616" />
       </Head>
       <body className={koHo.className}>
         {/* <Header /> */}
