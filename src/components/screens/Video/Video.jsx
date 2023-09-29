@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from './Video.module.css';
 import { videosData } from '@/data/videos.data';
+import seoStyles from '@/app/seoStyles.module.css';
 
 const Video = () => {
   return (
     <>
       <section className={styles.containerVideo}>
-        <h1 className={styles.titleHidden}>
+        <h1 className={seoStyles.titleHidden}>
           Відеоматеріали будівельної компанії Андезян
         </h1>
         <ul className={styles.listVideo}>

@@ -8,6 +8,7 @@ import { getDataByParam } from '@/utils/getDataByParam';
 // import Slider from '@/components/share/Slider/Slider';
 import ButtonToBack from '@/components/share/ButtonToBack/ButtonToBack';
 import dynamic from 'next/dynamic';
+import seoStyles from '@/app/seoStyles.module.css';
 
 const DynamicSlider = dynamic(() => import('@/components/share/Slider/Slider'));
 
@@ -26,7 +27,7 @@ const DesignCategory = ({ params }) => {
   return (
     <>
       <section className={styles.container}>
-        <h1 className={styles.titleHidden}>
+        <h1 className={seoStyles.titleHidden}>
           Проектна документація та Візуалізація
         </h1>
         <ButtonToBack onClick={() => router.back()} />

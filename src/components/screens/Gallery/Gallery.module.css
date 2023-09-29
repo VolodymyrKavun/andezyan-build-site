@@ -5,7 +5,8 @@
 
   @media screen and (min-width: 768px) {
     padding: 40px 56px 32px;
-    background: linear-gradient(rgba(22, 22, 22, 0.50), rgba(22, 22, 22, 0.50)), url("/gallery-bg.webp");
+    background: linear-gradient(rgba(22, 22, 22, 0.5), rgba(22, 22, 22, 0.5)),
+      url('/gallery-bg.webp');
     background-size: cover;
     background-position: 50% 56%;
   }
@@ -13,13 +14,6 @@
   @media screen and (min-width: 1440px) {
     min-height: calc(100vh - 140px);
   }
-}
-
-.titleHidden {
-  opacity: 0;
-  position: absolute;
-  text-align: center;
-  top: 0;
 }
 
 .list {

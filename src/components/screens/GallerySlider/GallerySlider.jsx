@@ -9,6 +9,7 @@ import { imageGallerySliderData } from '@/data/imageGallerySlider.data';
 import { createPath } from '@/utils/createPath';
 import { getDataByParam } from '@/utils/getDataByParam';
 import dynamic from 'next/dynamic';
+import seoStyles from '@/app/seoStyles.module.css';
 
 const DynamicSlider = dynamic(() => import('@/components/share/Slider/Slider'));
 
@@ -32,7 +33,7 @@ const GallerySlider = ({ params }) => {
 
   return (
     <section className={styles.container}>
-      <h1 className={styles.titleHidden}>
+      <h1 className={seoStyles.titleHidden}>
         Галерея будівельної компанії Андезян
       </h1>
       <ButtonToBack onClick={() => router.back()} />
