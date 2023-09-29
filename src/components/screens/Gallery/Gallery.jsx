@@ -4,11 +4,12 @@ import styles from './Gallery.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { imageGroupsData } from '@/data/imageGroups.data';
+import seoStyles from '@/app/seoStyles.module.css';
 
 const Gallery = () => {
   return (
     <section className={styles.container}>
-      <h1 className={styles.titleHidden}>
+      <h1 className={seoStyles.titleHidden}>
         Галерея будівельної компанії Андезян
       </h1>
       <ul className={styles.list}>

@@ -15,13 +15,6 @@
   }
 }
 
-.titleHidden {
-  opacity: 0;
-  position: absolute;
-  text-align: center;
-  top: 0;
-}
-
 .list {
   display: flex;
   align-items: center;
@@ -70,7 +63,8 @@
 .icon {
   width: 100%;
   height: 100%;
-  filter: invert(27%) sepia(10%) saturate(11%) hue-rotate(335deg) brightness(100%) contrast(94%);
+  filter: invert(27%) sepia(10%) saturate(11%) hue-rotate(335deg)
+    brightness(100%) contrast(94%);
 }
 
 .title {

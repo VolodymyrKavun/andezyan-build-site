@@ -4,12 +4,13 @@ import React from 'react';
 import styles from './Design.module.css';
 import { designData } from '@/data/design.data';
 import Link from 'next/link';
+import seoStyles from '@/app/seoStyles.module.css';
 
 const Design = () => {
   return (
     <>
       <section className={styles.container}>
-        <h1 className={styles.titleHidden}>Проектна документація</h1>
+        <h1 className={seoStyles.titleHidden}>Проектна документація</h1>
         <ul className={styles.list}>
           {designData.map(item => (
             <li className={styles.itemWrapper} key={item.id}>
