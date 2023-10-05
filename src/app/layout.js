@@ -7,6 +7,8 @@ import { KoHo } from 'next/font/google';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 // import GoogleAnalytics from './GoogleAnalytics';
+import { PHProvider, PostHogPageview } from './providers';
+import { Suspense } from 'react';
 
 const DynamicGoogleAnalytics = dynamic(() => import('./GoogleAnalytics'));
 
@@ -168,8 +170,12 @@ export default function RootLayout({ children }) {
 
         <link rel="mask-icon" href="/favicon.ico" color="#161616" />
       </Head>
-      <body className={koHo.className}>
-        {/* <Script
+      <Suspense>
+        <PostHogPageview />
+      </Suspense>
+      <PHProvider>
+        <body className={koHo.className}>
+          {/* <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
         />
@@ -184,19 +190,20 @@ export default function RootLayout({ children }) {
           });
     `}
         </Script> */}
-        {/* <GoogleAnalytics /> */}
-        <DynamicGoogleAnalytics />
-        {/* <Header /> */}
-        <DynamicHeader />
-        {children}
-        {/* <SocLinksButton /> */}
-        <DynamicSocLinksButton />
-        {/* <Footer /> */}
-        <DynamicFooter />
-        {/* <BackToTop /> */}
-        <DynamicBackToTop />
-        <div id="modal"></div>
-      </body>
+          {/* <GoogleAnalytics /> */}
+          <DynamicGoogleAnalytics />
+          {/* <Header /> */}
+          <DynamicHeader />
+          {children}
+          {/* <SocLinksButton /> */}
+          <DynamicSocLinksButton />
+          {/* <Footer /> */}
+          <DynamicFooter />
+          {/* <BackToTop /> */}
+          <DynamicBackToTop />
+          <div id="modal"></div>
+        </body>
+      </PHProvider>
     </html>
   );
 }
