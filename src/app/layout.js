@@ -6,6 +6,7 @@ import { KoHo } from 'next/font/google';
 // import SocLinksButton from '@/components/share/SocLinksButton/SocLinksButton';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
+import Script from 'next/script';
 
 const DynamicHeader = dynamic(() =>
   import('@/components/forLayout/Header/Header')
@@ -166,6 +167,21 @@ export default function RootLayout({ children }) {
         <link rel="mask-icon" href="/favicon.ico" color="#161616" />
       </Head>
       <body className={koHo.className}>
+        <Script
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+        />
+
+        <Script id="google-analytics-script" strategy="lazyOnload">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+          page_path: window.location.pathname,
+          });
+    `}
+        </Script>
         {/* <Header /> */}
         <DynamicHeader />
         {children}
