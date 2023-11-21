@@ -43,6 +43,7 @@ const DesignCategory = ({ params }) => {
                   alt={item.alt}
                   fill={true}
                   className={styles.img}
+                  sizes="(min-width: 1440px) 380px, 328px"
                 />
               </div>
             </li>

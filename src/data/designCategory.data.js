@@ -17,6 +17,48 @@ export const designCategory = {
   documentation: [
     {
       id: uuidv4(),
+      src: '/documentation/Finnish house_01.webp',
+      alt: 'Finnish house_01',
+      // category: 'documentation',
+    },
+    {
+      id: uuidv4(),
+      src: '/documentation/Finnish house_02.webp',
+      alt: 'Finnish house_02',
+      // category: 'documentation',
+    },
+    {
+      id: uuidv4(),
+      src: '/documentation/Finnish house_03.webp',
+      alt: 'Finnish house_03',
+      // category: 'documentation',
+    },
+    {
+      id: uuidv4(),
+      src: '/documentation/Finnish house_04.webp',
+      alt: 'Finnish house_04',
+      // category: 'documentation',
+    },
+    {
+      id: uuidv4(),
+      src: '/documentation/Finnish house_05.webp',
+      alt: 'Finnish house_05',
+      // category: 'documentation',
+    },
+    {
+      id: uuidv4(),
+      src: '/documentation/Finnish house_06.webp',
+      alt: 'Finnish house_06',
+      // category: 'documentation',
+    },
+    {
+      id: uuidv4(),
+      src: '/documentation/Finnish house_07.webp',
+      alt: 'Finnish house_07',
+      // category: 'documentation',
+    },
+    {
+      id: uuidv4(),
       src: '/documentation/1_page.webp',
       alt: '1_page',
       // category: 'documentation',

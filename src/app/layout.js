@@ -72,7 +72,7 @@ export const metadata = {
     ],
   },
   themeColor: '#161616',
-  manifest: `${process.env.NEXT_PUBLIC_MAIN_URL}site.webmanifest`,
+
   openGraph: {
     title: 'Будівельна компанія Андезян',
     url: 'https://andezyan-build-site.vercel.app/',
@@ -86,21 +86,21 @@ export const metadata = {
         type: 'image/png',
         width: 400,
         height: 300,
-        alt: 'Малий Опен',
+        alt: 'Малий скрін',
       },
       {
         url: '/twitter-image.png',
         type: 'image/png',
         width: 800,
         height: 600,
-        alt: 'Середній Опен',
+        alt: 'Середній скрін',
       },
       {
         url: '/opengraph-image.png',
         type: 'image/png',
         width: 1200,
         height: 630,
-        alt: 'Великий Опен',
+        alt: 'Великий скрін',
       },
     ],
     locale: 'en_GB',
@@ -135,9 +135,41 @@ export const metadata = {
   ],
   creator: 'Андезян',
   publisher: 'Андезян',
+  appLinks: {
+    ios: {
+      url: 'https://andezyan-build-site.vercel.app/',
+      app_name: 'Будівельна компанія Андезян',
+    },
+    android: {
+      url: 'https://andezyan-build-site.vercel.app/',
+      package: 'https://andezyan-build-site.vercel.app/',
+      app_name: 'Будівельна компанія Андезян',
+    },
+    web: {
+      url: 'https://andezyan-build-site.vercel.app/',
+      should_fallback: true,
+    },
+  },
+  assets: ['https://andezyan-build-site.vercel.app/'],
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Будівельна компанія Андезян',
+    url: 'https://andezyan-build-site.vercel.app/',
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+380675909988',
+        email: 'aoandezyan@gmail.com',
+        contactType: 'customer service',
+      },
+    ],
+    keywords:
+      'Будівництво ангарів. Реконструкція. Склад. Ангар. Будівельна компанія Андезян',
+  };
   return (
     <html lang="uk">
       <Head>
@@ -175,6 +207,10 @@ export default function RootLayout({ children }) {
       </Suspense>
       <PHProvider>
         <body className={koHo.className}>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           {/* <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
