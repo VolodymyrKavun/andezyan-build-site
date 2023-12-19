@@ -4,7 +4,7 @@ export default function sitemap() {
       url: `${process.env.NEXT_PUBLIC_MAIN_URL}`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
-      priority: 1,
+      priority: 1.0,
     },
     {
       url: `${process.env.NEXT_PUBLIC_MAIN_URL}aboutUs`,
@@ -26,12 +26,6 @@ export default function sitemap() {
     },
     {
       url: `${process.env.NEXT_PUBLIC_MAIN_URL}video`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_MAIN_URL}contacts`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.5,
