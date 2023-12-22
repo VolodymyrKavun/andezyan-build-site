@@ -40,44 +40,44 @@ const VideoPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div
-        itemscope
-        itemtype="https://schema.org/Organization"
+        itemScope
+        itemType="https://schema.org/Organization"
         style={{ display: 'none' }}
       >
-        <meta itemprop="name" content="Будівельна компанія Андезян" />
-        <link itemprop="url" href="https://andezyan-build-site.vercel.app/" />
+        <meta itemProp="name" content="Будівельна компанія Андезян" />
+        <link itemProp="url" href="https://andezyan-build-site.vercel.app/" />
         <link
-          itemprop="logo"
+          itemProp="logo"
           href="https://andezyan-build-site.vercel.app/favicon.ico"
         />
         <meta
-          itemprop="description"
+          itemProp="description"
           content="Ангар, склад, навіс, металоконструкції, реконструкція, Проектування будівельних споруд, Моделювання, Візуалізація та Розробка документації."
         />
         <meta
-          itemprop="keywords"
+          itemProp="keywords"
           content="Будівельна компанія Андезян, Будівництво ангарів, Ангар, Склад"
         />
         <div
-          itemprop="address"
-          itemscope
-          itemtype="https://schema.org/PostalAddress"
+          itemProp="address"
+          itemScope
+          itemType="https://schema.org/PostalAddress"
         >
-          <meta itemprop="addressLocality" content="Біла Церква, Україна" />
-          <meta itemprop="postalCode" content="09100" />
-          <meta itemprop="streetAddress" content="вул. Київська, 96" />
+          <meta itemProp="addressLocality" content="Біла Церква, Україна" />
+          <meta itemProp="postalCode" content="09100" />
+          <meta itemProp="streetAddress" content="вул. Київська, 96" />
         </div>
         <div
-          itemprop="ContactPoint"
-          itemscope
-          itemtype="https://schema.org/ContactPoint"
+          itemProp="ContactPoint"
+          itemScope
+          itemType="https://schema.org/ContactPoint"
         >
-          <meta itemprop="email" content="aoandezyan@gmail.com" />
-          <meta itemprop="email" content="lotos0712@ukr.net" />
-          <meta itemprop="telephone" content="+380675909988" />
-          <meta itemprop="telephone" content="+380674630606" />
-          <meta itemprop="telephone" content="+380674630606" />
-          <meta itemprop="telephone" content="+380456051228" />
+          <meta itemProp="email" content="aoandezyan@gmail.com" />
+          <meta itemProp="email" content="lotos0712@ukr.net" />
+          <meta itemProp="telephone" content="+380675909988" />
+          <meta itemProp="telephone" content="+380674630606" />
+          <meta itemProp="telephone" content="+380674630606" />
+          <meta itemProp="telephone" content="+380456051228" />
         </div>
       </div>
       <Video />
