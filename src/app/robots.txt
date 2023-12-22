@@ -1,4 +1,19 @@
 User-Agent: *
 Allow: /
+Allow: /aboutUs/
+Allow: /design/
+Allow: /gallery/
+Allow: /video/
+Allow: /contacts/
+Allow: /design/sertificate/
+Allow: /design/documentation/
+Allow: /design/visualization/
+Allow: /gallery/houses/
+Allow: /gallery/angars/
+Allow: /gallery/asphalt/
+Allow: /gallery/beton/
+Allow: /gallery/shops/
+
 Disallow: /private/
+
 Sitemap: https://andezyan-build-site.vercel.app/sitemap.xml
