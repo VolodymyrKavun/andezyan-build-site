@@ -6,6 +6,9 @@ export const metadata = {
   title: 'Про будівельну компанію Андезян',
   description:
     'Ангари під зерно та техніку. Ангари для бізнесу. Складські приміщення для всіх сфер діяльності. Будівлі з металоконструкцій від виробника',
+  alternates: {
+    canonical: 'https://andezyan-build-site.vercel.app/aboutUs',
+  },
 };
 
 const AboutUsPage = () => {
